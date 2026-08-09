@@ -1,0 +1,427 @@
+{
+  "profile": {
+    "displayName": "H. Zhan",
+    "private": {
+      "fullName": "",
+      "phone": "",
+      "address": ""
+    },
+    "privacy": {
+      "showFullName": false,
+      "showPhoto": true,
+      "cvDownloadEnabled": false,
+      "publicEmailEnabled": true
+    },
+    "publicEmail": "zhanhaojing0601@163.com",
+    "location": {
+      "zh": "中国广东",
+      "en": "Guangdong, China"
+    },
+    "photo": {
+      "src": "./assets/profile.jpg",
+      "alt": {
+        "zh": "H. Zhan 在山景前的照片",
+        "en": "H. Zhan standing in front of a mountain landscape"
+      }
+    },
+    "role": {
+      "zh": "社会心理学研究者",
+      "en": "Social Psychology Researcher"
+    },
+    "headline": {
+      "zh": "我关注个体在面对与自身生存和安全相关的威胁时，如何理解并调整自己与国家、政府及其他群体之间的关系。",
+      "en": "I study how people understand and navigate their relationships with nations, governments, and other groups when facing threats to their survival and security."
+    },
+    "bio": [
+      {
+        "zh": "我的研究以现实威胁为起点，考察群体认同、制度信任与群体边界在威胁应对中的作用。我尤其关注，人们何时会将群体视为安全与支持的来源，以及这种联结何时促进合作，何时又会转向防御与排斥。",
+        "en": "My research begins with realistic threats and examines the roles of group identification, institutional trust, and group boundaries in people's responses to threat. I am particularly interested in when people turn to groups for security and support, when these connections encourage cooperation, and when they become defensive or exclusionary."
+      },
+      {
+        "zh": "目前，我主要研究 AI 及其他现实威胁如何影响国家认同，以及政府信任在其中发挥的作用。在此基础上，我也希望将这条研究线拓展到社会文化变迁中的规范压力，进一步理解这类压力如何影响身份适应、社会联结和掌控感。",
+        "en": "My current work examines how AI-related and other realistic threats shape national identification, as well as the role of government trust in these processes. Building on this work, I also hope to extend this research to normative pressures amid sociocultural change and examine how such pressures shape identity adaptation, social connectedness, and perceived control."
+      },
+      {
+        "zh": "如果你也对这些问题感兴趣，或有合作想法，欢迎与我联系。(^-^)",
+        "en": "If these questions resonate with you, or if you have a collaboration idea, I would be glad to hear from you. (^-^)"
+      }
+    ],
+    "keywords": [
+      {
+        "zh": "现实与技术威胁",
+        "en": "Realistic and technological threats"
+      },
+      {
+        "zh": "国家依恋",
+        "en": "National attachment"
+      },
+      {
+        "zh": "政府信任",
+        "en": "Government trust"
+      },
+      {
+        "zh": "群际关系",
+        "en": "Intergroup relations"
+      }
+    ],
+    "links": [
+      {
+        "label": "ORCID",
+        "accessibleLabel": {
+          "zh": "打开 ORCID 个人主页，编号 0009-0006-1518-5986",
+          "en": "Open ORCID profile, identifier 0009-0006-1518-5986"
+        },
+        "url": "https://orcid.org/0009-0006-1518-5986",
+        "rel": "me",
+        "kind": "orcid"
+      }
+    ]
+  },
+  "navigation": [
+    {
+      "id": "about",
+      "label": {
+        "zh": "关于",
+        "en": "About"
+      }
+    },
+    {
+      "id": "education",
+      "label": {
+        "zh": "教育经历",
+        "en": "Education"
+      }
+    },
+    {
+      "id": "papers",
+      "label": {
+        "zh": "论文",
+        "en": "Working Papers"
+      }
+    },
+    {
+      "id": "research",
+      "label": {
+        "zh": "研究",
+        "en": "Research"
+      }
+    },
+    {
+      "id": "experience",
+      "label": {
+        "zh": "工作经历",
+        "en": "Work Experience"
+      }
+    }
+  ],
+  "researchProjects": [
+    {
+      "id": "ai-threat-national-attachment",
+      "group": "current",
+      "isActive": true,
+      "title": {
+        "zh": "人工智能威胁对国家认同的影响及其心理机制",
+        "en": "AI Threat and National Identification: Psychological Mechanisms"
+      },
+      "question": {
+        "zh": "本项目检验 AI 威胁是否削弱国家认同，并进一步考察政府信任能否解释或缓冲这一关系。",
+        "en": "This project tests whether AI threat weakens national identification and whether government trust explains or buffers this relationship."
+      },
+      "designData": {
+        "zh": "基于跨国档案数据（N = 32,330）、问卷研究（N = 541）与行为实验（N = 600）开展多研究检验。",
+        "en": "A multi-study program using cross-national archival data (N = 32,330), a survey (N = 541), and a behavioral experiment (N = 600)."
+      },
+      "methods": {
+        "zh": "采用 HLM 与中介路径分析，考察 AI 威胁、政府信任和国家认同之间的关系。",
+        "en": "HLM and mediation-path analyses examine relationships among AI threat, government trust, and national identification."
+      },
+      "role": {
+        "zh": "第一作者，负责文献梳理、理论框架建构、研究设计与执行、数据分析以及论文写作与修改。",
+        "en": "First author; responsible for the literature review, theoretical framework, study design and implementation, data analysis, and manuscript preparation and revision."
+      },
+      "status": {
+        "zh": "稿件准备中",
+        "en": "Manuscript in preparation"
+      }
+    },
+    {
+      "id": "realistic-threat-national-identification",
+      "group": "current",
+      "isActive": true,
+      "title": {
+        "zh": "现实威胁对国家认同的影响及其心理机制",
+        "en": "Realistic Threat and National Identification: Psychological Mechanisms"
+      },
+      "question": {
+        "zh": "本研究构建现实威胁影响国家认同的综合解释框架，梳理不同威胁何时强化或削弱国家联结，以及这些差异源自哪些适应性机制。",
+        "en": "This review develops an integrative framework for when realistic threats strengthen or weaken national attachment and which adaptive mechanisms account for these divergent outcomes."
+      },
+      "designData": {
+        "zh": "从进化心理学视角整合自然灾害、战争与恐怖袭击、传染病、经济衰退及移民威胁等研究。",
+        "en": "An integrative review drawing on evolutionary psychology and research on natural disasters, war and terrorism, infectious disease, economic downturn, and immigration threat."
+      },
+      "methods": {
+        "zh": "辨析现实威胁与国家认同的核心概念，并综合安全寻求、保护性群体依赖、控制感修复、国家群体功能性价值评估与群际边界强化等潜在机制。",
+        "en": "The framework clarifies core concepts and integrates potential mechanisms including security seeking, protective group reliance, restoration of control, evaluation of the national group's functional value, and stronger intergroup boundaries."
+      },
+      "role": {
+        "zh": "负责核心概念辨析与理论框架建构，主导综述主体写作与多轮修订。",
+        "en": "Responsible for conceptual clarification and theoretical framework development, and led the main review writing and successive revisions."
+      },
+      "status": {
+        "zh": "综述稿准备中",
+        "en": "Review manuscript in preparation"
+      }
+    },
+    {
+      "id": "ocs-metacognitive-beliefs",
+      "group": "collaborative",
+      "isActive": true,
+      "title": {
+        "zh": "中国大学新生强迫症状与元认知信念的纵向网络研究",
+        "en": "Longitudinal Network Study of Obsessive-Compulsive Symptoms and Metacognitive Beliefs Among Chinese University Freshmen"
+      },
+      "question": {
+        "zh": "本研究刻画强迫症状与元认知信念的跨时网络关系，识别具有时间预测意义的关键节点，并明确时间关联不能被直接解释为因果机制。",
+        "en": "This study maps cross-lagged network relations between obsessive-compulsive symptoms and metacognitive beliefs, identifies temporally predictive nodes, and clarifies that temporal associations should not be interpreted as causal mechanisms."
+      },
+      "designData": {
+        "zh": "采用纵向数据与交叉滞后面板网络分析。",
+        "en": "Longitudinal data analyzed with a cross-lagged panel network approach."
+      },
+      "methods": {
+        "zh": "重点澄清时间关联与因果机制的解释边界，并讨论心理脆弱性、发展转折、临床启示、研究局限与未来方向。",
+        "en": "The interpretation distinguishes temporal associations from causal mechanisms and considers psychological vulnerability, developmental transitions, clinical implications, limitations, and future directions."
+      },
+      "role": {
+        "zh": "合作作者，参与论文修改并协助回应审稿意见，重点完善 Introduction 与 Discussion，优化理论逻辑、文献整合及纵向网络结果的解释。",
+        "en": "Co-author; contributed to manuscript development and editing and helped address reviewer comments, focusing on the Introduction and Discussion, theoretical logic, literature integration, and interpretation of the longitudinal network findings."
+      },
+      "status": {
+        "zh": "论文修改中",
+        "en": "Ongoing manuscript development"
+      }
+    },
+    {
+      "id": "disease-avoidance-intergroup-cooperation",
+      "group": "previous",
+      "isActive": false,
+      "title": {
+        "zh": "疾病防御动机与对外国人的行为：刻板印象的中介作用",
+        "en": "Disease Defense Motivation and Behavior Toward Foreigners: The Mediating Role of Stereotypes"
+      },
+      "question": {
+        "zh": "疾病防御动机如何通过刻板印象影响个体与不同国籍外国人的合作行为？",
+        "en": "How does disease defense motivation shape cooperation with foreigners of different nationalities through stereotypes?"
+      },
+      "methods": {
+        "zh": "两项行为实验（N = 300、N = 101）与一项问卷调查（N = 118），采用社会困境范式以及中介与调节分析。",
+        "en": "Two behavioral experiments (N = 300 and N = 101) and one survey (N = 118), using social dilemma paradigms and mediation and moderation analyses."
+      },
+      "status": {
+        "zh": "既往研究项目",
+        "en": "Previous research project"
+      }
+    },
+    {
+      "id": "new-old-preference",
+      "group": "previous",
+      "isActive": false,
+      "title": {
+        "zh": "人们真的喜新厌旧吗？情境对物品新旧偏好的影响",
+        "en": "Do People Really Prefer the New? Context and Preferences for New Versus Old Objects"
+      },
+      "question": {
+        "zh": "人们是否普遍偏好新物品，情境线索如何调节新旧偏好？",
+        "en": "Do people generally prefer new objects, and how do contextual cues moderate preferences for new versus old objects?"
+      },
+      "methods": {
+        "zh": "本科毕业论文，独立完成四项实验（N = 389），包含基于反应时的内隐联想测验、调节分析与中介分析。",
+        "en": "Undergraduate thesis comprising four independently conducted experiments (N = 389), including a reaction-time-based implicit association test, moderation analysis, and mediation analysis."
+      },
+      "status": {
+        "zh": "本科毕业论文",
+        "en": "Undergraduate thesis"
+      }
+    }
+  ],
+  "papers": [
+    {
+      "id": "jiang-zhan-oc-metacognition",
+      "title": "Unravelling the associations between obsessive-compulsive symptoms and metacognitive beliefs in Chinese college freshmen: A cross-lagged panel network analysis",
+      "authors": "Jiang, W., Zhan, H., Shi, Z.#, & Zhang, X.#",
+      "status": {
+        "zh": "Psychiatry Research 返修中",
+        "en": "Under revision at Psychiatry Research"
+      },
+      "citationStatus": {
+        "zh": "返修中",
+        "en": "under revision"
+      },
+      "venue": "Psychiatry Research",
+      "metrics": "JIF = 3.9, JCR Q1",
+      "summary": {
+        "zh": "采用交叉滞后面板网络分析，考察中国大一新生强迫症状与元认知信念之间的纵向关联。",
+        "en": "A cross-lagged panel network analysis of the longitudinal associations between obsessive-compulsive symptoms and metacognitive beliefs among Chinese college freshmen."
+      }
+    },
+    {
+      "id": "ai-threat-working-paper",
+      "title": "When AI threatens the nation: Government trust and national attachment",
+      "authors": "Zhan, H., & Li, Y.#",
+      "status": {
+        "zh": "稿件准备中",
+        "en": "Manuscript in preparation"
+      },
+      "citationStatus": {
+        "zh": "稿件准备中",
+        "en": "manuscript in preparation"
+      },
+      "summary": {
+        "zh": "考察 AI 威胁、政府信任与国家依恋之间关系的多研究稿件。",
+        "en": "A multi-study manuscript examining relationships among AI threat, government trust, and national attachment."
+      }
+    },
+    {
+      "id": "realistic-threat-review",
+      "title": "The effect of realistic threats on national identification and its psychological mechanism",
+      "authors": "Zhan, H., Ding, J., & Li, Y.#",
+      "status": {
+        "zh": "综述稿准备中",
+        "en": "Review manuscript in preparation"
+      },
+      "citationStatus": {
+        "zh": "综述稿准备中",
+        "en": "review manuscript in preparation"
+      },
+      "summary": {
+        "zh": "梳理现实威胁影响国家认同及其心理机制的综述稿件。",
+        "en": "A review manuscript synthesizing how realistic threats affect national identification and related psychological mechanisms."
+      }
+    }
+  ],
+  "background": {
+    "education": [
+      {
+        "institution": {
+          "zh": "中国科学院心理研究所",
+          "en": "Institute of Psychology, Chinese Academy of Sciences"
+        },
+        "degree": {
+          "zh": "应用心理硕士，社会心理学方向",
+          "en": "M.A. in Applied Psychology, Social Psychology"
+        },
+        "supervisor": {
+          "name": "Dr. Yan-Mei Li",
+          "url": "https://psych.cas.cn/sourcedb/cn/expert/201003/t20100304_6369816.html"
+        },
+        "period": "2021-2024"
+      },
+      {
+        "institution": {
+          "zh": "华南师范大学",
+          "en": "South China Normal University"
+        },
+        "degree": {
+          "zh": "应用心理学理学学士",
+          "en": "B.S. in Applied Psychology"
+        },
+        "supervisor": {
+          "name": "Dr. Wenqi Wei",
+          "url": ""
+        },
+        "period": "2017-2021"
+      }
+    ],
+    "methods": [
+      {
+        "zh": "问卷研究",
+        "en": "Survey research"
+      },
+      {
+        "zh": "行为实验",
+        "en": "Behavioral experiments"
+      },
+      {
+        "zh": "多层线性模型（HLM）",
+        "en": "Hierarchical linear modeling (HLM)"
+      },
+      {
+        "zh": "SPSS 与 R",
+        "en": "SPSS and R"
+      },
+      {
+        "zh": "心理测量",
+        "en": "Psychometrics"
+      }
+    ],
+    "experience": [
+      {
+        "organization": {
+          "zh": "比亚迪",
+          "en": "BYD"
+        },
+        "role": {
+          "zh": "高级组织管理专员",
+          "en": "Senior Organization Management Specialist"
+        },
+        "period": {
+          "zh": "2024 年 7 月-2025 年 7 月",
+          "en": "Jul 2024-Jul 2025"
+        },
+        "highlights": [
+          {
+            "zh": "组织诊断与健康度调研：基于 BLM 模型设计问卷并主导汽车新技术研究院半年度组织健康度调研，回收 14,000 余份问卷（回收率 89%），访谈 92 名员工与管理者，分析组织问题并形成研究报告与改进建议。",
+            "en": "Organizational diagnosis and health survey: Designed a BLM-based questionnaire and led a semiannual organizational health survey for the Automotive New Technology Research Institute, collecting more than 14,000 responses (89% response rate) and interviewing 92 employees and managers to diagnose organizational issues and recommend improvements."
+          },
+          {
+            "zh": "组织盘点与信息化建设：主导季度组织盘点，审视 3,000 余个组织单元并优化盘点流程；推动信息化系统从 0 到 1 上线，提升数据可视化效率。",
+            "en": "Organizational review and digitalization: Led quarterly reviews of more than 3,000 organizational units, improved the review process, and launched a new information system that increased data-visualization efficiency."
+          }
+        ]
+      },
+      {
+        "organization": {
+          "zh": "字节跳动",
+          "en": "ByteDance"
+        },
+        "role": {
+          "zh": "用户研究员实习生",
+          "en": "User Research Intern"
+        },
+        "period": {
+          "zh": "2023 年 6 月-2023 年 9 月",
+          "en": "Jun 2023-Sep 2023"
+        },
+        "highlights": [
+          {
+            "zh": "定量研究与数据分析：负责汽水音乐、抖音等产品的用户调研数据分析，处理 20,000 余份有效数据并使用 SPSS 开展 TGI 等分析，为产品迭代与品牌升级提供洞察。",
+            "en": "Quantitative research and data analysis: Analyzed user research data for products including Soda Music and Douyin, working with more than 20,000 valid responses and using SPSS for TGI and related analyses to inform product iteration and brand development."
+          },
+          {
+            "zh": "定性研究与深度访谈：支持今日头条、番茄小说等产品的用户留存与功能研究，协助开展 50 余场用户访谈与焦点小组，提炼行为模式与核心痛点并提出可落地建议。",
+            "en": "Qualitative research and in-depth interviews: Supported retention and feature research for products including Toutiao and Tomato Novel, contributing to more than 50 user interviews and focus groups and translating behavioral patterns and pain points into actionable recommendations."
+          },
+          {
+            "zh": "市场与竞品分析：完成抖音“毕业歌会”与 B 站竞品对比，以及美国小说与短剧市场可行性研究；结合问卷（N = 1,000）与定性访谈梳理用户链路，为业务决策提供研究支持。",
+            "en": "Market and competitive analysis: Conducted comparative research on Douyin's Graduation Concert and Bilibili, as well as feasibility research on the US fiction and short-drama markets; combined a survey (N = 1,000) with qualitative interviews to map user journeys and support business decisions."
+          }
+        ]
+      }
+    ],
+    "honors": [
+      {
+        "zh": "中国科学院大学三好学生，2021-2022",
+        "en": "Merit Student, University of Chinese Academy of Sciences, 2021-2022"
+      },
+      {
+        "zh": "中国科学院大学二等奖学金，2021-2022、2022-2023",
+        "en": "Second-Class Scholarship, University of Chinese Academy of Sciences, 2021-2022 and 2022-2023"
+      },
+      {
+        "zh": "华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格",
+        "en": "Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University"
+      }
+    ]
+  }
+}

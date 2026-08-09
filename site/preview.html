@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="Offline preview of H. Zhan's academic homepage." />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>H. Zhan | Academic Homepage Preview</title>
+    <style>:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #f9fafb;
+  --color-text: #20262d;
+  --color-muted: #5b6670;
+  --color-faint: #7a858f;
+  --color-accent: #315f78;
+  --color-border: #d6dce1;
+  --color-focus: #204f69;
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+  --type-meta: 0.875rem;
+  --type-detail: 0.9375rem;
+  --type-body: 1rem;
+  --type-subheading: 1.125rem;
+  --type-heading: clamp(1.4rem, 1.8vw, 1.5rem);
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --page-width: 74rem;
+  --reading-width: 42rem;
+  --header-height: 4.25rem;
+}
+
+html:lang(zh-CN) {
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-serif: "Songti SC", STSong, SimSun, "Noto Serif CJK SC", "Source Han Serif SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.66;
+  text-rendering: optimizeLegibility;
+}
+
+html:lang(zh-CN) body {
+  line-height: 1.7;
+}
+
+html:lang(zh-CN) h1,
+html:lang(zh-CN) h2 {
+  letter-spacing: 0;
+}
+
+html:lang(zh-CN) h3 {
+  letter-spacing: 0;
+}
+
+html:lang(zh-CN) .about-headline {
+  line-height: 1.52;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+strong {
+  font-weight: var(--weight-semibold);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  margin-bottom: 1.2rem;
+  font-size: var(--type-heading);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: var(--type-heading);
+  line-height: 1.12;
+}
+
+h3 {
+  margin-bottom: 0.65rem;
+  font-size: var(--type-subheading);
+  font-weight: var(--weight-semibold);
+  line-height: 1.35;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 3;
+  transform: translateY(-180%);
+  background: var(--color-text);
+  color: var(--color-surface);
+  padding: 0.65rem 0.9rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading-state {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--page-gutter);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.error-state h1 {
+  font-size: var(--type-heading);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  min-height: var(--header-height);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 88%, transparent);
+  background: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header__inner {
+  width: min(var(--page-width), calc(100% - (var(--page-gutter) * 2)));
+  min-height: var(--header-height);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.brand {
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: var(--type-subheading);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.8rem, 2vw, 1.65rem);
+  min-width: 0;
+}
+
+.nav-link,
+.header-link {
+  position: relative;
+  color: var(--color-muted);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.55rem;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link[aria-current="location"],
+.header-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+.header-actions,
+.language-switch {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions {
+  gap: 0.9rem;
+}
+
+.language-switch {
+  gap: 0.38rem;
+  color: var(--color-faint);
+  font-size: var(--type-meta);
+}
+
+.language-button {
+  border: 0;
+  background: transparent;
+  color: var(--color-faint);
+  cursor: pointer;
+  padding: 0.3rem 0;
+  transition: color 180ms ease;
+}
+
+.language-button:hover,
+.language-button[aria-pressed="true"] {
+  color: var(--color-accent);
+}
+
+.language-button:active {
+  transform: translateY(1px);
+}
+
+.page-shell {
+  width: min(var(--page-width), calc(100% - (var(--page-gutter) * 2)));
+  margin: 0 auto;
+  padding: clamp(2.25rem, 4vw, 3.75rem) 0 3.5rem;
+}
+
+.academic-layout {
+  display: grid;
+  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+.profile-panel {
+  position: sticky;
+  top: calc(var(--header-height) + 2.25rem);
+  color: var(--color-muted);
+}
+
+.profile-photo-frame {
+  display: block;
+  width: min(100%, 16rem);
+  aspect-ratio: 4 / 3;
+  margin: 0 0 1.45rem;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-name {
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+  font-size: var(--type-heading);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+}
+
+.profile-role {
+  margin-bottom: 1.65rem;
+  color: var(--color-accent);
+  font-size: var(--type-detail);
+  font-weight: var(--weight-medium);
+}
+
+.profile-email {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+  overflow-wrap: anywhere;
+}
+
+.profile-email-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.profile-email-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.profile-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.7rem 0 0;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+}
+
+.profile-location-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.profile-location-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.profile-links {
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.profile-links a:hover {
+  color: var(--color-accent);
+}
+
+.profile-link-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-muted);
+  color: var(--color-bg);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.08em;
+  line-height: 1;
+  transition: background 180ms ease;
+}
+
+.profile-links a:hover .profile-link-icon {
+  background: var(--color-accent);
+}
+
+.profile-topics {
+  width: 100%;
+  min-width: 0;
+  margin-top: 1.5rem;
+}
+
+.profile-methods {
+  width: 100%;
+  min-width: 0;
+  margin-top: 1rem;
+}
+
+.profile-topics h2,
+.profile-methods h2 {
+  margin-bottom: 0.5rem;
+  font-size: var(--type-detail);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.profile-topics p,
+.profile-methods p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: var(--type-meta);
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+
+.profile-term {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.academic-content {
+  min-width: 0;
+}
+
+.academic-section {
+  padding: clamp(1.65rem, 2.5vw, 2.3rem) 0 0;
+}
+
+.about-section {
+  padding: clamp(0.35rem, 1.5vw, 1.1rem) 0 0;
+}
+
+.about-headline {
+  margin-bottom: 1.1rem;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--type-subheading);
+  font-weight: var(--weight-semibold);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.about-headline,
+.prose,
+.section-heading,
+.paper-list,
+.research-list,
+.previous-research,
+.background-block {
+  width: min(100%, var(--reading-width));
+}
+
+.prose p,
+.section-heading p,
+.previous-entry p,
+.experience-list article > p:last-child,
+.honors-block li {
+  color: var(--color-muted);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose p:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.section-heading {
+  margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.section-heading > h2,
+.background-block > h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-heading > h2:last-child {
+  margin-bottom: 0;
+}
+
+.section-heading p {
+  margin-bottom: 0;
+}
+
+.research-list {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.research-entry {
+  padding: 0;
+}
+
+.entry-status {
+  display: block;
+  margin: 0.2rem 0 0;
+  color: var(--color-faint);
+  font-family: var(--font-sans);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.research-entry h3 {
+  max-width: var(--reading-width);
+  font-size: var(--type-subheading);
+}
+
+.research-meta {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.research-meta li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+}
+
+.research-meta li::before {
+  position: absolute;
+  left: 0.1rem;
+  top: 0.76em;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--color-accent);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.research-meta-label {
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: var(--type-detail);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+html:lang(zh-CN) .entry-status {
+  display: inline;
+  margin: 0 0 0 0.45rem;
+}
+
+html:lang(zh-CN) .research-list {
+  gap: 1.5rem;
+}
+
+html:lang(zh-CN) .research-meta {
+  gap: 0.45rem;
+}
+
+.previous-research {
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.collaborative-research {
+  margin-top: 2rem;
+}
+
+.collaborative-research .research-list {
+  gap: 1.25rem;
+}
+
+.subsection-title {
+  margin-bottom: 0.85rem;
+  color: var(--color-faint);
+  font-family: var(--font-sans);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-medium);
+}
+
+.previous-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.previous-entry {
+  padding-left: 0;
+}
+
+.previous-entry h3 {
+  margin-bottom: 0.55rem;
+  font-family: var(--font-sans);
+  font-size: var(--type-detail);
+  font-weight: var(--weight-medium);
+  line-height: 1.45;
+}
+
+.previous-entry p {
+  margin-bottom: 0.65rem;
+  font-size: var(--type-detail);
+}
+
+.previous-entry .entry-meta {
+  margin-bottom: 0;
+  color: var(--color-faint);
+  font-size: var(--type-meta);
+}
+
+.paper-list {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.apa-citation {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--color-text);
+  font-size: var(--type-detail);
+  line-height: 1.62;
+  text-indent: -1.5rem;
+}
+
+.paper-metrics {
+  color: var(--color-faint);
+  font-size: var(--type-meta);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.background-block + .background-block {
+  margin-top: 1.9rem;
+}
+
+.background-block > h2 {
+  margin-bottom: 0.9rem;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.timeline-list strong,
+.education-degree {
+  display: block;
+}
+
+.education-degree,
+.timeline-list time {
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+}
+
+.education-supervisor {
+  margin: 0.18rem 0 0;
+  color: var(--color-faint);
+  font-size: var(--type-meta);
+}
+
+.education-supervisor a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.education-supervisor a:hover {
+  color: var(--color-accent);
+}
+
+.timeline-list time {
+  justify-self: end;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.experience-list article {
+  padding: 0;
+}
+
+.experience-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 0.6rem;
+}
+
+.experience-heading p {
+  margin: 0;
+}
+
+.experience-period {
+  justify-self: end;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.66;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.experience-list strong,
+.experience-list span {
+  display: block;
+}
+
+.experience-list span {
+  color: var(--color-accent);
+  font-size: var(--type-meta);
+}
+
+.experience-highlights {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--color-muted);
+  font-size: var(--type-detail);
+}
+
+.experience-highlights li + li {
+  margin-top: 0.45rem;
+}
+
+.honors-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: var(--type-detail);
+}
+
+.honors-block li + li {
+  margin-top: 0.45rem;
+}
+
+.site-footer {
+  width: min(var(--page-width), calc(100% - (var(--page-gutter) * 2)));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding: 1.6rem 0 2.2rem;
+  color: var(--color-faint);
+  font-size: var(--type-meta);
+}
+
+@media (min-width: 48.0625rem) {
+  .prose p,
+  .apa-citation,
+  .research-meta li,
+  .previous-entry > p:not(.entry-meta),
+  .experience-highlights li {
+    hyphens: auto;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
+
+@media (max-width: 58rem) {
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+
+  .site-nav {
+    gap: 0.9rem;
+  }
+
+  .academic-layout {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --page-gutter: 1.15rem;
+    --header-height: 6.5rem;
+  }
+
+  .site-header__inner {
+    grid-template-columns: 1fr auto;
+    align-content: center;
+    padding: 0.65rem 0;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    gap: 0.55rem;
+    overflow-x: auto;
+    padding: 0.45rem 0 0.55rem;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .academic-layout {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .profile-panel {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.4rem 1rem;
+    align-items: end;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile-photo-frame {
+    grid-column: 1 / -1;
+    width: min(16rem, 72vw);
+  }
+
+  .profile-name,
+  .profile-role,
+  .profile-email,
+  .profile-location,
+  .profile-links {
+    grid-column: 1;
+  }
+
+  .profile-topics,
+  .profile-methods {
+    grid-column: 1 / -1;
+    max-width: 30rem;
+  }
+
+  .profile-topics {
+    margin-top: 0.7rem;
+  }
+
+  .profile-role,
+  .profile-focus {
+    margin-bottom: 0.8rem;
+  }
+
+  .about-section {
+    padding-top: 0;
+  }
+
+  .previous-grid,
+  .experience-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .timeline-list li {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .experience-heading {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .experience-period {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+  }
+}
+
+@media print {
+  .site-header,
+  .skip-link,
+  .language-switch {
+    display: none;
+  }
+
+  body {
+    background: var(--color-surface);
+  }
+
+  .page-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .profile-panel {
+    position: static;
+  }
+
+  .academic-section {
+    break-inside: avoid;
+  }
+}
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="app"></div>
+    <script>
+      (() => {
+        const pages = {"en":"\n    \n    \u003cheader class=\"site-header\">\n      \u003cdiv class=\"site-header__inner\">\n        \u003ca class=\"brand\" href=\"#about\">Homepage\u003c/a>\n        \u003cnav class=\"site-nav\" aria-label=\"Primary navigation\">\n          \u003ca class=\"nav-link\" href=\"#about\" data-nav-target=\"about\" aria-current=\"location\">About\u003c/a>\u003ca class=\"nav-link\" href=\"#education\" data-nav-target=\"education\">Education\u003c/a>\u003ca class=\"nav-link\" href=\"#papers\" data-nav-target=\"papers\">Working Papers\u003c/a>\u003ca class=\"nav-link\" href=\"#research\" data-nav-target=\"research\">Research\u003c/a>\u003ca class=\"nav-link\" href=\"#experience\" data-nav-target=\"experience\">Work Experience\u003c/a>\n        \u003c/nav>\n        \u003cdiv class=\"header-actions\">\n          \n          \u003cdiv class=\"language-switch\" aria-label=\"Language switcher\">\n            \u003cbutton class=\"language-button\" type=\"button\" data-language=\"zh\" aria-label=\"切换到中文\">中文\u003c/button>\n            \u003cspan aria-hidden=\"true\">/\u003c/span>\n            \u003cbutton class=\"language-button\" type=\"button\" data-language=\"en\" aria-label=\"Switch to English\">EN\u003c/button>\n          \u003c/div>\n        \u003c/div>\n      \u003c/div>\n    \u003c/header>\n  \n    \u003cmain id=\"main-content\" class=\"page-shell\" tabindex=\"-1\">\n      \n    \u003cdiv class=\"academic-layout\">\n      \n    \u003caside class=\"profile-panel\" aria-label=\"Profile\">\n      \u003cfigure class=\"profile-photo-frame\">\u003cimg class=\"profile-photo\" src=\"./assets/profile.jpg\" alt=\"H. Zhan standing in front of a mountain landscape\" decoding=\"async\" fetchpriority=\"high\" />\u003c/figure>\n      \u003ch1 class=\"profile-name\">H. Zhan\u003c/h1>\n      \u003cp class=\"profile-role\">Social Psychology Researcher\u003c/p>\n      \u003cp class=\"profile-email\">\u003cspan class=\"profile-email-icon\" aria-hidden=\"true\">\u003csvg viewBox=\"0 0 24 24\" focusable=\"false\">\u003crect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1.5\">\u003c/rect>\u003cpath d=\"m4 7 8 6 8-6\">\u003c/path>\u003c/svg>\u003c/span>\u003cspan>zhanhaojing0601@163.com\u003c/span>\u003c/p>\n      \u003cp class=\"profile-location\">\u003cspan class=\"profile-location-icon\" aria-hidden=\"true\">\u003csvg viewBox=\"0 0 24 24\" focusable=\"false\">\u003cpath d=\"M12 21s6-5.2 6-12a6 6 0 1 0-12 0c0 6.8 6 12 6 12Z\">\u003c/path>\u003ccircle cx=\"12\" cy=\"9\" r=\"2\">\u003c/circle>\u003c/svg>\u003c/span>\u003cspan>Guangdong, China\u003c/span>\u003c/p>\n      \u003cul class=\"profile-links\">\u003cli>\u003ca href=\"https://orcid.org/0009-0006-1518-5986\" target=\"_blank\" rel=\"me noreferrer\" aria-label=\"Open ORCID profile, identifier 0009-0006-1518-5986\">\u003cspan class=\"profile-link-icon profile-link-icon--orcid\" aria-hidden=\"true\">iD\u003c/span>\u003cspan>ORCID\u003c/span>\u003c/a>\u003c/li>\u003c/ul>\n      \u003csection class=\"profile-topics\" aria-labelledby=\"profile-topics-title\">\n        \u003ch2 id=\"profile-topics-title\">Research topics\u003c/h2>\n        \u003cp>\u003cspan class=\"profile-term\">Realistic and technological threats,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">National attachment,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">Government trust,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">Intergroup relations\u003c/span>\u003c/p>\n      \u003c/section>\n      \u003csection class=\"profile-methods\" aria-labelledby=\"profile-methods-title\">\n        \u003ch2 id=\"profile-methods-title\">Research methods\u003c/h2>\n        \u003cp>\u003cspan class=\"profile-term\">Survey research,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">Behavioral experiments,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">Hierarchical linear modeling (HLM),\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">SPSS and R,\u003c/span>\u003cwbr> \u003cspan class=\"profile-term\">Psychometrics\u003c/span>\u003c/p>\n      \u003c/section>\n    \u003c/aside>\n  \n      \u003cdiv class=\"academic-content\">\n        \n    \u003csection id=\"about\" class=\"academic-section about-section\" data-observed-section>\n      \u003ch2 class=\"visually-hidden\">About\u003c/h2>\n      \u003cp class=\"about-headline\">I study how people understand and navigate their relationships with nations, governments, and other groups when facing threats to their survival and security.\u003c/p>\n      \u003cdiv class=\"prose\">\n        \u003cp>My research begins with realistic threats and examines the roles of group identification, institutional trust, and group boundaries in people&#039;s responses to threat. I am particularly interested in when people turn to groups for security and support, when these connections encourage cooperation, and when they become defensive or exclusionary.\u003c/p>\u003cp>My current work examines how AI-related and other realistic threats shape national identification, as well as the role of government trust in these processes. Building on this work, I also hope to extend this research to normative pressures amid sociocultural change and examine how such pressures shape identity adaptation, social connectedness, and perceived control.\u003c/p>\u003cp>If these questions resonate with you, or if you have a collaboration idea, I would be glad to hear from you. (^-^)\u003c/p>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"education\" class=\"academic-section education-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>Education\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"background-block education-block\">\n        \u003col class=\"timeline-list\">\n          \n            \u003cli>\n              \u003cdiv>\n                \u003cstrong>Institute of Psychology, Chinese Academy of Sciences\u003c/strong>\n                \u003cspan class=\"education-degree\">M.A. in Applied Psychology, Social Psychology\u003c/span>\n                \u003cp class=\"education-supervisor\">Supervisor: \u003ca href=\"https://psych.cas.cn/sourcedb/cn/expert/201003/t20100304_6369816.html\" target=\"_blank\" rel=\"noreferrer\">Dr. Yan-Mei Li\u003c/a>\u003c/p>\n              \u003c/div>\n              \u003ctime>2021-2024\u003c/time>\n            \u003c/li>\n          \n            \u003cli>\n              \u003cdiv>\n                \u003cstrong>South China Normal University\u003c/strong>\n                \u003cspan class=\"education-degree\">B.S. in Applied Psychology\u003c/span>\n                \u003cp class=\"education-supervisor\">Supervisor: Dr. Wenqi Wei\u003c/p>\n              \u003c/div>\n              \u003ctime>2017-2021\u003c/time>\n            \u003c/li>\n          \n        \u003c/ol>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"papers\" class=\"academic-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>Working papers\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"paper-list\">\n        \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">Jiang, W., \u003cstrong>Zhan, H.\u003c/strong>, Shi, Z.#, &amp; Zhang, X.# (under revision). Unravelling the associations between obsessive-compulsive symptoms and metacognitive beliefs in Chinese college freshmen: A cross-lagged panel network analysis. \u003cem class=\"paper-venue\">Psychiatry Research\u003c/em>. \u003cspan class=\"paper-metrics\">[JIF = 3.9, JCR Q1]\u003c/span>\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">\u003cstrong>Zhan, H.\u003c/strong>, &amp; Li, Y.# (manuscript in preparation). When AI threatens the nation: Government trust and national attachment.\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">\u003cstrong>Zhan, H.\u003c/strong>, Ding, J., &amp; Li, Y.# (review manuscript in preparation). The effect of realistic threats on national identification and its psychological mechanism.\u003c/p>\n    \u003c/article>\n  \n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"research\" class=\"academic-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>Research\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"research-list\">\n        \n    \u003carticle class=\"research-entry\">\n      \u003ch3>AI Threat and National Identification: Psychological Mechanisms\u003cspan class=\"entry-status\">(Manuscript in preparation)\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">Content:\u003c/span> This project tests whether AI threat weakens national identification and whether government trust explains or buffers this relationship.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Methods:\u003c/span> A multi-study program using cross-national archival data (N = 32,330), a survey (N = 541), and a behavioral experiment (N = 600). HLM and mediation-path analyses examine relationships among AI threat, government trust, and national identification.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Role:\u003c/span> First author; responsible for the literature review, theoretical framework, study design and implementation, data analysis, and manuscript preparation and revision.\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n    \u003carticle class=\"research-entry\">\n      \u003ch3>Realistic Threat and National Identification: Psychological Mechanisms\u003cspan class=\"entry-status\">(Review manuscript in preparation)\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">Content:\u003c/span> This review develops an integrative framework for when realistic threats strengthen or weaken national attachment and which adaptive mechanisms account for these divergent outcomes.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Methods:\u003c/span> An integrative review drawing on evolutionary psychology and research on natural disasters, war and terrorism, infectious disease, economic downturn, and immigration threat. The framework clarifies core concepts and integrates potential mechanisms including security seeking, protective group reliance, restoration of control, evaluation of the national group&#039;s functional value, and stronger intergroup boundaries.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Role:\u003c/span> Responsible for conceptual clarification and theoretical framework development, and led the main review writing and successive revisions.\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n      \u003c/div>\n      \n        \u003cdiv class=\"collaborative-research\">\n          \u003cdiv class=\"research-list research-list--secondary\">\n            \n    \u003carticle class=\"research-entry\">\n      \u003ch3>Longitudinal Network Study of Obsessive-Compulsive Symptoms and Metacognitive Beliefs Among Chinese University Freshmen\u003cspan class=\"entry-status\">(Ongoing manuscript development)\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">Content:\u003c/span> This study maps cross-lagged network relations between obsessive-compulsive symptoms and metacognitive beliefs, identifies temporally predictive nodes, and clarifies that temporal associations should not be interpreted as causal mechanisms.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Methods:\u003c/span> Longitudinal data analyzed with a cross-lagged panel network approach. The interpretation distinguishes temporal associations from causal mechanisms and considers psychological vulnerability, developmental transitions, clinical implications, limitations, and future directions.\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">Role:\u003c/span> Co-author; contributed to manuscript development and editing and helped address reviewer comments, focusing on the Introduction and Discussion, theoretical logic, literature integration, and interpretation of the longitudinal network findings.\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n          \u003c/div>\n        \u003c/div>\n      \n      \u003cdiv class=\"previous-research\">\n        \u003ch3 class=\"subsection-title\">Selected previous research\u003c/h3>\n        \u003cdiv class=\"previous-grid\">\n          \n    \u003carticle class=\"previous-entry\">\n      \u003ch3>Disease Defense Motivation and Behavior Toward Foreigners: The Mediating Role of Stereotypes\u003c/h3>\n      \u003cp>How does disease defense motivation shape cooperation with foreigners of different nationalities through stereotypes?\u003c/p>\n      \u003cp class=\"entry-meta\">Two behavioral experiments (N = 300 and N = 101) and one survey (N = 118), using social dilemma paradigms and mediation and moderation analyses.\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"previous-entry\">\n      \u003ch3>Do People Really Prefer the New? Context and Preferences for New Versus Old Objects\u003c/h3>\n      \u003cp>Do people generally prefer new objects, and how do contextual cues moderate preferences for new versus old objects?\u003c/p>\n      \u003cp class=\"entry-meta\">Undergraduate thesis comprising four independently conducted experiments (N = 389), including a reaction-time-based implicit association test, moderation analysis, and mediation analysis.\u003c/p>\n    \u003c/article>\n  \n        \u003c/div>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"experience\" class=\"academic-section\" data-observed-section>\n      \n    \u003cdiv class=\"background-block experience-block\">\n      \u003ch2>Work experience\u003c/h2>\n      \u003cdiv class=\"experience-list\">\n        \n          \u003carticle>\n            \u003cheader class=\"experience-heading\">\n              \u003cp>\u003cstrong>BYD\u003c/strong>\u003cspan>Senior Organization Management Specialist\u003c/span>\u003c/p>\n              \u003ctime class=\"experience-period\">Jul 2024-Jul 2025\u003c/time>\n            \u003c/header>\n            \u003cul class=\"experience-highlights\">\n              \u003cli>Organizational diagnosis and health survey: Designed a BLM-based questionnaire and led a semiannual organizational health survey for the Automotive New Technology Research Institute, collecting more than 14,000 responses (89% response rate) and interviewing 92 employees and managers to diagnose organizational issues and recommend improvements.\u003c/li>\u003cli>Organizational review and digitalization: Led quarterly reviews of more than 3,000 organizational units, improved the review process, and launched a new information system that increased data-visualization efficiency.\u003c/li>\n            \u003c/ul>\n          \u003c/article>\n        \n          \u003carticle>\n            \u003cheader class=\"experience-heading\">\n              \u003cp>\u003cstrong>ByteDance\u003c/strong>\u003cspan>User Research Intern\u003c/span>\u003c/p>\n              \u003ctime class=\"experience-period\">Jun 2023-Sep 2023\u003c/time>\n            \u003c/header>\n            \u003cul class=\"experience-highlights\">\n              \u003cli>Quantitative research and data analysis: Analyzed user research data for products including Soda Music and Douyin, working with more than 20,000 valid responses and using SPSS for TGI and related analyses to inform product iteration and brand development.\u003c/li>\u003cli>Qualitative research and in-depth interviews: Supported retention and feature research for products including Toutiao and Tomato Novel, contributing to more than 50 user interviews and focus groups and translating behavioral patterns and pain points into actionable recommendations.\u003c/li>\u003cli>Market and competitive analysis: Conducted comparative research on Douyin&#039;s Graduation Concert and Bilibili, as well as feasibility research on the US fiction and short-drama markets; combined a survey (N = 1,000) with qualitative interviews to map user journeys and support business decisions.\u003c/li>\n            \u003c/ul>\n          \u003c/article>\n        \n      \u003c/div>\n    \u003c/div>\n  \n      \u003cdiv class=\"background-block honors-block\">\n        \u003ch2>Honors and Awards\u003c/h2>\n        \u003cul>\n          \u003cli>Merit Student, University of Chinese Academy of Sciences, 2021-2022\u003c/li>\u003cli>Second-Class Scholarship, University of Chinese Academy of Sciences, 2021-2022 and 2022-2023\u003c/li>\u003cli>Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University\u003c/li>\n        \u003c/ul>\n      \u003c/div>\n    \u003c/section>\n  \n      \u003c/div>\n    \u003c/div>\n  \n    \u003c/main>\n    \n    \u003cfooter class=\"site-footer\">\n      \u003cspan>H. Zhan\u003c/span>\n      \u003cspan>Academic homepage\u003c/span>\n    \u003c/footer>\n  \n  ","zh":"\n    \n    \u003cheader class=\"site-header\">\n      \u003cdiv class=\"site-header__inner\">\n        \u003ca class=\"brand\" href=\"#about\">主页\u003c/a>\n        \u003cnav class=\"site-nav\" aria-label=\"主页导航\">\n          \u003ca class=\"nav-link\" href=\"#about\" data-nav-target=\"about\" aria-current=\"location\">关于\u003c/a>\u003ca class=\"nav-link\" href=\"#education\" data-nav-target=\"education\">教育经历\u003c/a>\u003ca class=\"nav-link\" href=\"#papers\" data-nav-target=\"papers\">论文\u003c/a>\u003ca class=\"nav-link\" href=\"#research\" data-nav-target=\"research\">研究\u003c/a>\u003ca class=\"nav-link\" href=\"#experience\" data-nav-target=\"experience\">工作经历\u003c/a>\n        \u003c/nav>\n        \u003cdiv class=\"header-actions\">\n          \n          \u003cdiv class=\"language-switch\" aria-label=\"语言切换\">\n            \u003cbutton class=\"language-button\" type=\"button\" data-language=\"zh\" aria-label=\"切换到中文\">中文\u003c/button>\n            \u003cspan aria-hidden=\"true\">/\u003c/span>\n            \u003cbutton class=\"language-button\" type=\"button\" data-language=\"en\" aria-label=\"Switch to English\">EN\u003c/button>\n          \u003c/div>\n        \u003c/div>\n      \u003c/div>\n    \u003c/header>\n  \n    \u003cmain id=\"main-content\" class=\"page-shell\" tabindex=\"-1\">\n      \n    \u003cdiv class=\"academic-layout\">\n      \n    \u003caside class=\"profile-panel\" aria-label=\"个人信息\">\n      \u003cfigure class=\"profile-photo-frame\">\u003cimg class=\"profile-photo\" src=\"./assets/profile.jpg\" alt=\"H. Zhan 在山景前的照片\" decoding=\"async\" fetchpriority=\"high\" />\u003c/figure>\n      \u003ch1 class=\"profile-name\">H. Zhan\u003c/h1>\n      \u003cp class=\"profile-role\">社会心理学研究者\u003c/p>\n      \u003cp class=\"profile-email\">\u003cspan class=\"profile-email-icon\" aria-hidden=\"true\">\u003csvg viewBox=\"0 0 24 24\" focusable=\"false\">\u003crect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1.5\">\u003c/rect>\u003cpath d=\"m4 7 8 6 8-6\">\u003c/path>\u003c/svg>\u003c/span>\u003cspan>zhanhaojing0601@163.com\u003c/span>\u003c/p>\n      \u003cp class=\"profile-location\">\u003cspan class=\"profile-location-icon\" aria-hidden=\"true\">\u003csvg viewBox=\"0 0 24 24\" focusable=\"false\">\u003cpath d=\"M12 21s6-5.2 6-12a6 6 0 1 0-12 0c0 6.8 6 12 6 12Z\">\u003c/path>\u003ccircle cx=\"12\" cy=\"9\" r=\"2\">\u003c/circle>\u003c/svg>\u003c/span>\u003cspan>中国广东\u003c/span>\u003c/p>\n      \u003cul class=\"profile-links\">\u003cli>\u003ca href=\"https://orcid.org/0009-0006-1518-5986\" target=\"_blank\" rel=\"me noreferrer\" aria-label=\"打开 ORCID 个人主页，编号 0009-0006-1518-5986\">\u003cspan class=\"profile-link-icon profile-link-icon--orcid\" aria-hidden=\"true\">iD\u003c/span>\u003cspan>ORCID\u003c/span>\u003c/a>\u003c/li>\u003c/ul>\n      \u003csection class=\"profile-topics\" aria-labelledby=\"profile-topics-title\">\n        \u003ch2 id=\"profile-topics-title\">研究主题\u003c/h2>\n        \u003cp>\u003cspan class=\"profile-term\">现实与技术威胁、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">国家依恋、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">政府信任、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">群际关系\u003c/span>\u003c/p>\n      \u003c/section>\n      \u003csection class=\"profile-methods\" aria-labelledby=\"profile-methods-title\">\n        \u003ch2 id=\"profile-methods-title\">研究方法\u003c/h2>\n        \u003cp>\u003cspan class=\"profile-term\">问卷研究、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">行为实验、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">多层线性模型（HLM）、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">SPSS 与 R、\u003c/span>\u003cwbr>\u003cspan class=\"profile-term\">心理测量\u003c/span>\u003c/p>\n      \u003c/section>\n    \u003c/aside>\n  \n      \u003cdiv class=\"academic-content\">\n        \n    \u003csection id=\"about\" class=\"academic-section about-section\" data-observed-section>\n      \u003ch2 class=\"visually-hidden\">关于\u003c/h2>\n      \u003cp class=\"about-headline\">我关注个体在面对与自身生存和安全相关的威胁时，如何理解并调整自己与国家、政府及其他群体之间的关系。\u003c/p>\n      \u003cdiv class=\"prose\">\n        \u003cp>我的研究以现实威胁为起点，考察群体认同、制度信任与群体边界在威胁应对中的作用。我尤其关注，人们何时会将群体视为安全与支持的来源，以及这种联结何时促进合作，何时又会转向防御与排斥。\u003c/p>\u003cp>目前，我主要研究 AI 及其他现实威胁如何影响国家认同，以及政府信任在其中发挥的作用。在此基础上，我也希望将这条研究线拓展到社会文化变迁中的规范压力，进一步理解这类压力如何影响身份适应、社会联结和掌控感。\u003c/p>\u003cp>如果你也对这些问题感兴趣，或有合作想法，欢迎与我联系。(^-^)\u003c/p>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"education\" class=\"academic-section education-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>教育经历\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"background-block education-block\">\n        \u003col class=\"timeline-list\">\n          \n            \u003cli>\n              \u003cdiv>\n                \u003cstrong>中国科学院心理研究所\u003c/strong>\n                \u003cspan class=\"education-degree\">应用心理硕士，社会心理学方向\u003c/span>\n                \u003cp class=\"education-supervisor\">导师: \u003ca href=\"https://psych.cas.cn/sourcedb/cn/expert/201003/t20100304_6369816.html\" target=\"_blank\" rel=\"noreferrer\">Dr. Yan-Mei Li\u003c/a>\u003c/p>\n              \u003c/div>\n              \u003ctime>2021-2024\u003c/time>\n            \u003c/li>\n          \n            \u003cli>\n              \u003cdiv>\n                \u003cstrong>华南师范大学\u003c/strong>\n                \u003cspan class=\"education-degree\">应用心理学理学学士\u003c/span>\n                \u003cp class=\"education-supervisor\">导师: Dr. Wenqi Wei\u003c/p>\n              \u003c/div>\n              \u003ctime>2017-2021\u003c/time>\n            \u003c/li>\n          \n        \u003c/ol>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"papers\" class=\"academic-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>进行中的论文\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"paper-list\">\n        \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">Jiang, W., \u003cstrong>Zhan, H.\u003c/strong>, Shi, Z.#, &amp; Zhang, X.# (返修中). Unravelling the associations between obsessive-compulsive symptoms and metacognitive beliefs in Chinese college freshmen: A cross-lagged panel network analysis. \u003cem class=\"paper-venue\">Psychiatry Research\u003c/em>. \u003cspan class=\"paper-metrics\">[JIF = 3.9, JCR Q1]\u003c/span>\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">\u003cstrong>Zhan, H.\u003c/strong>, &amp; Li, Y.# (稿件准备中). When AI threatens the nation: Government trust and national attachment.\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"paper-entry\">\n      \u003cp class=\"apa-citation\">\u003cstrong>Zhan, H.\u003c/strong>, Ding, J., &amp; Li, Y.# (综述稿准备中). The effect of realistic threats on national identification and its psychological mechanism.\u003c/p>\n    \u003c/article>\n  \n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"research\" class=\"academic-section\" data-observed-section>\n      \u003cdiv class=\"section-heading\">\n        \u003ch2>研究\u003c/h2>\n      \u003c/div>\n      \u003cdiv class=\"research-list\">\n        \n    \u003carticle class=\"research-entry\">\n      \u003ch3>人工智能威胁对国家认同的影响及其心理机制\u003cspan class=\"entry-status\">（稿件准备中）\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">内容：\u003c/span>本项目检验 AI 威胁是否削弱国家认同，并进一步考察政府信任能否解释或缓冲这一关系。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">方法：\u003c/span>基于跨国档案数据（N = 32,330）、问卷研究（N = 541）与行为实验（N = 600）开展多研究检验。 采用 HLM 与中介路径分析，考察 AI 威胁、政府信任和国家认同之间的关系。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">角色：\u003c/span>第一作者，负责文献梳理、理论框架建构、研究设计与执行、数据分析以及论文写作与修改。\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n    \u003carticle class=\"research-entry\">\n      \u003ch3>现实威胁对国家认同的影响及其心理机制\u003cspan class=\"entry-status\">（综述稿准备中）\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">内容：\u003c/span>本研究构建现实威胁影响国家认同的综合解释框架，梳理不同威胁何时强化或削弱国家联结，以及这些差异源自哪些适应性机制。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">方法：\u003c/span>从进化心理学视角整合自然灾害、战争与恐怖袭击、传染病、经济衰退及移民威胁等研究。 辨析现实威胁与国家认同的核心概念，并综合安全寻求、保护性群体依赖、控制感修复、国家群体功能性价值评估与群际边界强化等潜在机制。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">角色：\u003c/span>负责核心概念辨析与理论框架建构，主导综述主体写作与多轮修订。\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n      \u003c/div>\n      \n        \u003cdiv class=\"collaborative-research\">\n          \u003cdiv class=\"research-list research-list--secondary\">\n            \n    \u003carticle class=\"research-entry\">\n      \u003ch3>中国大学新生强迫症状与元认知信念的纵向网络研究\u003cspan class=\"entry-status\">（论文修改中）\u003c/span>\u003c/h3>\n      \u003cul class=\"research-meta\">\n        \u003cli>\u003cspan class=\"research-meta-label\">内容：\u003c/span>本研究刻画强迫症状与元认知信念的跨时网络关系，识别具有时间预测意义的关键节点，并明确时间关联不能被直接解释为因果机制。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">方法：\u003c/span>采用纵向数据与交叉滞后面板网络分析。 重点澄清时间关联与因果机制的解释边界，并讨论心理脆弱性、发展转折、临床启示、研究局限与未来方向。\u003c/li>\n        \u003cli>\u003cspan class=\"research-meta-label\">角色：\u003c/span>合作作者，参与论文修改并协助回应审稿意见，重点完善 Introduction 与 Discussion，优化理论逻辑、文献整合及纵向网络结果的解释。\u003c/li>\n      \u003c/ul>\n    \u003c/article>\n  \n          \u003c/div>\n        \u003c/div>\n      \n      \u003cdiv class=\"previous-research\">\n        \u003ch3 class=\"subsection-title\">早期研究\u003c/h3>\n        \u003cdiv class=\"previous-grid\">\n          \n    \u003carticle class=\"previous-entry\">\n      \u003ch3>疾病防御动机与对外国人的行为：刻板印象的中介作用\u003c/h3>\n      \u003cp>疾病防御动机如何通过刻板印象影响个体与不同国籍外国人的合作行为？\u003c/p>\n      \u003cp class=\"entry-meta\">两项行为实验（N = 300、N = 101）与一项问卷调查（N = 118），采用社会困境范式以及中介与调节分析。\u003c/p>\n    \u003c/article>\n  \n    \u003carticle class=\"previous-entry\">\n      \u003ch3>人们真的喜新厌旧吗？情境对物品新旧偏好的影响\u003c/h3>\n      \u003cp>人们是否普遍偏好新物品，情境线索如何调节新旧偏好？\u003c/p>\n      \u003cp class=\"entry-meta\">本科毕业论文，独立完成四项实验（N = 389），包含基于反应时的内隐联想测验、调节分析与中介分析。\u003c/p>\n    \u003c/article>\n  \n        \u003c/div>\n      \u003c/div>\n    \u003c/section>\n  \n        \n    \u003csection id=\"experience\" class=\"academic-section\" data-observed-section>\n      \n    \u003cdiv class=\"background-block experience-block\">\n      \u003ch2>工作经历\u003c/h2>\n      \u003cdiv class=\"experience-list\">\n        \n          \u003carticle>\n            \u003cheader class=\"experience-heading\">\n              \u003cp>\u003cstrong>比亚迪\u003c/strong>\u003cspan>高级组织管理专员\u003c/span>\u003c/p>\n              \u003ctime class=\"experience-period\">2024 年 7 月-2025 年 7 月\u003c/time>\n            \u003c/header>\n            \u003cul class=\"experience-highlights\">\n              \u003cli>组织诊断与健康度调研：基于 BLM 模型设计问卷并主导汽车新技术研究院半年度组织健康度调研，回收 14,000 余份问卷（回收率 89%），访谈 92 名员工与管理者，分析组织问题并形成研究报告与改进建议。\u003c/li>\u003cli>组织盘点与信息化建设：主导季度组织盘点，审视 3,000 余个组织单元并优化盘点流程；推动信息化系统从 0 到 1 上线，提升数据可视化效率。\u003c/li>\n            \u003c/ul>\n          \u003c/article>\n        \n          \u003carticle>\n            \u003cheader class=\"experience-heading\">\n              \u003cp>\u003cstrong>字节跳动\u003c/strong>\u003cspan>用户研究员实习生\u003c/span>\u003c/p>\n              \u003ctime class=\"experience-period\">2023 年 6 月-2023 年 9 月\u003c/time>\n            \u003c/header>\n            \u003cul class=\"experience-highlights\">\n              \u003cli>定量研究与数据分析：负责汽水音乐、抖音等产品的用户调研数据分析，处理 20,000 余份有效数据并使用 SPSS 开展 TGI 等分析，为产品迭代与品牌升级提供洞察。\u003c/li>\u003cli>定性研究与深度访谈：支持今日头条、番茄小说等产品的用户留存与功能研究，协助开展 50 余场用户访谈与焦点小组，提炼行为模式与核心痛点并提出可落地建议。\u003c/li>\u003cli>市场与竞品分析：完成抖音“毕业歌会”与 B 站竞品对比，以及美国小说与短剧市场可行性研究；结合问卷（N = 1,000）与定性访谈梳理用户链路，为业务决策提供研究支持。\u003c/li>\n            \u003c/ul>\n          \u003c/article>\n        \n      \u003c/div>\n    \u003c/div>\n  \n      \u003cdiv class=\"background-block honors-block\">\n        \u003ch2>奖励与荣誉\u003c/h2>\n        \u003cul>\n          \u003cli>中国科学院大学三好学生，2021-2022\u003c/li>\u003cli>中国科学院大学二等奖学金，2021-2022、2022-2023\u003c/li>\u003cli>华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格\u003c/li>\n        \u003c/ul>\n      \u003c/div>\n    \u003c/section>\n  \n      \u003c/div>\n    \u003c/div>\n  \n    \u003c/main>\n    \n    \u003cfooter class=\"site-footer\">\n      \u003cspan>H. Zhan\u003c/span>\n      \u003cspan>个人学术主页\u003c/span>\n    \u003c/footer>\n  \n  "};
+        const app = document.querySelector('#app');
+        let language = 'en';
+        let sectionObserver;
+
+        function markCurrentSection(sectionId) {
+          document.querySelectorAll('[data-nav-target]').forEach((link) => {
+            if (link.dataset.navTarget === sectionId) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
+        }
+
+        function resolveCurrentSection(sections) {
+          const activationLine = Math.min(window.innerHeight * 0.28, 220);
+          const measured = Array.from(sections).map((section) => ({
+            id: section.id,
+            rect: section.getBoundingClientRect()
+          }));
+          const current = measured.find(({ rect }) => rect.top <= activationLine && rect.bottom > activationLine);
+          if (current) return current.id;
+          const upcoming = measured.find(({ rect }) => rect.top > activationLine);
+          return upcoming?.id || measured.at(-1)?.id;
+        }
+
+        function observeSections() {
+          sectionObserver?.disconnect();
+          const sections = document.querySelectorAll('[data-observed-section]');
+          if (!sections.length || !('IntersectionObserver' in window)) return;
+          sectionObserver = new IntersectionObserver(() => {
+            const sectionId = resolveCurrentSection(sections);
+            if (sectionId) markCurrentSection(sectionId);
+          }, { rootMargin: '-18% 0px -62% 0px', threshold: [0.05, 0.25, 0.5] });
+          sections.forEach((section) => sectionObserver.observe(section));
+        }
+
+        function render() {
+          app.innerHTML = pages[language];
+          document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-language]').forEach((button) => {
+            button.setAttribute('aria-pressed', String(button.dataset.language === language));
+          });
+          observeSections();
+        }
+
+        app.addEventListener('click', (event) => {
+          const navLink = event.target.closest('[data-nav-target]');
+          if (navLink) markCurrentSection(navLink.dataset.navTarget);
+
+          const button = event.target.closest('[data-language]');
+          if (!button) return;
+          language = button.dataset.language === 'zh' ? 'zh' : 'en';
+          render();
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>

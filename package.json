@@ -1,0 +1,11 @@
+{
+  "name": "h-zhan-academic-homepage",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:preview": "node scripts/build-file-preview.mjs",
+    "test": "npm run build:preview && node --test tests/*.test.mjs",
+    "serve": "python3 -m http.server 4173 --directory site"
+  }
+}
