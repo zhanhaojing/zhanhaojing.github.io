@@ -191,10 +191,34 @@ function renderExperience(content, language) {
   `;
 }
 
+function renderAcademicService(content, language) {
+  return `
+    <div class="background-block academic-service-block">
+      <h2>${language === 'zh' ? '学术服务' : 'Academic Service'}</h2>
+      <div class="experience-list">
+        ${content.background.academicService.map((item) => `
+          <article>
+            <header class="experience-heading">
+              <p><strong>${item.url
+                ? `<a class="academic-service-link" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(localize(item.organization, language))}</a>`
+                : escapeHtml(localize(item.organization, language))}</strong><span>${escapeHtml(localize(item.role, language))}</span></p>
+              <time class="experience-period">${escapeHtml(localize(item.period, language))}</time>
+            </header>
+            <ul class="experience-highlights">
+              ${item.highlights.map((highlight) => `<li>${escapeHtml(localize(highlight, language))}</li>`).join('')}
+            </ul>
+          </article>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
 function renderProfessionalBackground(content, language) {
   return `
     <section id="experience" class="academic-section" data-observed-section>
       ${renderExperience(content, language)}
+      ${renderAcademicService(content, language)}
       <div class="background-block honors-block">
         <h2>${language === 'zh' ? '奖励与荣誉' : 'Honors and Awards'}</h2>
         <ul>

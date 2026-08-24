@@ -409,6 +409,29 @@
         ]
       }
     ],
+    "academicService": [
+      {
+        "organization": {
+          "zh": "FORRT 开放学术术语表中文版",
+          "en": "FORRT Open Scholarship Glossary, Chinese Edition"
+        },
+        "role": {
+          "zh": "项目贡献者",
+          "en": "Project Contributor"
+        },
+        "period": {
+          "zh": "2026 年 8 月至今",
+          "en": "Aug 2026-Present"
+        },
+        "url": "https://forrt.org/glossary/chinese/",
+        "highlights": [
+          {
+            "zh": "近期加入中文版术语表项目，后续将参与开放学术术语定义、中文表达与参考来源的审校和修订，为面向中文研究者的开放科学基础资源建设提供支持。",
+            "en": "Recently joined the Chinese glossary project and will contribute to reviewing and revising open-scholarship definitions, Chinese-language phrasing, and source references, supporting an accessible open-science resource for Chinese-speaking researchers."
+          }
+        ]
+      }
+    ],
     "honors": [
       {
         "zh": "中国科学院大学三好学生，2021-2022",

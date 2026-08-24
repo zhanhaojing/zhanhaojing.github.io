@@ -13,6 +13,7 @@ const preview = readFileSync(join(root, 'site/preview.html'), 'utf8');
 const pagesWorkflow = readFileSync(join(root, '.github/workflows/deploy-pages.yml'), 'utf8');
 const robots = readFileSync(join(root, 'site/robots.txt'), 'utf8');
 const sitemap = readFileSync(join(root, 'site/sitemap.xml'), 'utf8');
+const content = JSON.parse(readFileSync(join(root, 'site/content/siteContent.json'), 'utf8'));
 
 test('static site files exist', () => {
   for (const path of [
@@ -124,6 +125,16 @@ test('work experience uses a single vertical column', () => {
   assert.match(css, /\.experience-period\s*{[^}]*justify-self:\s*end[^}]*font-variant-numeric:\s*tabular-nums[^}]*text-align:\s*right/s);
   assert.match(css, /\.experience-highlights\s*{[^}]*padding-left:\s*1rem[^}]*font-size:\s*var\(--type-detail\)/s);
   assert.match(css, /\.experience-highlights li \+ li\s*{[^}]*margin-top:\s*0\.45rem/s);
+});
+
+test('academic service is presented conservatively between work experience and honors', () => {
+  assert.equal(content.background.academicService.length, 1);
+  assert.equal(content.background.academicService[0].role.en, 'Project Contributor');
+  assert.match(content.background.academicService[0].highlights[0].en, /Recently joined/);
+  assert.match(singlePage, /'学术服务' : 'Academic Service'/);
+  assert.match(singlePage, /renderExperience\(content, language\)[\s\S]*renderAcademicService\(content, language\)[\s\S]*honors-block/);
+  assert.match(singlePage, /class="academic-service-link"/);
+  assert.match(css, /\.academic-service-link\s*{[^}]*color:\s*var\(--color-text\)[^}]*text-decoration:\s*none/s);
 });
 
 test('profile photo preserves the original composition', () => {

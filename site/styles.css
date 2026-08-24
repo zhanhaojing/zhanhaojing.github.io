@@ -758,6 +758,17 @@ html:lang(zh-CN) .research-meta {
   font-size: var(--type-meta);
 }
 
+.academic-service-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.academic-service-link:hover,
+.academic-service-link:focus-visible {
+  color: var(--color-accent);
+}
+
 .experience-highlights {
   margin: 0;
   padding-left: 1rem;
