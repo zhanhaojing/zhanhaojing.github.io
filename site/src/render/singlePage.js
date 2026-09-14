@@ -1,8 +1,12 @@
-import { groupedProjects, localize, visibleProfile } from '../contentAccess.js?v=20260809-single-page-30';
-import { escapeHtml, renderOwnName } from './common.js?v=20260809-single-page-30';
+import { groupedProjects, localize, visibleProfile } from '../contentAccess.js?v=20260914-site-1';
+import { escapeHtml, renderOwnName } from './common.js?v=20260914-site-1';
 
 function renderProfilePanel(content, language) {
   const profile = visibleProfile(content.profile);
+  const localizedRole = localize(content.profile.role, language);
+  const role = language === 'en'
+    ? localizedRole.split(' & ').map((line) => `<span>${escapeHtml(line)}</span>`).join('')
+    : `<span>${escapeHtml(localizedRole)}</span>`;
   const portrait = profile.showPhoto
     ? `<figure class="profile-photo-frame"><img class="profile-photo" src="${escapeHtml(profile.photo.src)}" alt="${escapeHtml(localize(profile.photo.alt, language))}" decoding="async" fetchpriority="high" /></figure>`
     : '<!-- TODO: add an approved professional portrait, square crop, at least 800 by 800 pixels. -->';
@@ -39,7 +43,7 @@ function renderProfilePanel(content, language) {
     <aside class="profile-panel" aria-label="${language === 'zh' ? '个人信息' : 'Profile'}">
       ${portrait}
       <h1 class="profile-name">${escapeHtml(profile.name)}</h1>
-      <p class="profile-role">${escapeHtml(localize(content.profile.role, language))}</p>
+      <p class="profile-role">${role}</p>
       ${email}
       ${location}
       ${links}
@@ -121,12 +125,24 @@ function renderResearch(content, language) {
 }
 
 function renderPaper(paper, language) {
+  if (paper.bilingualCitation) {
+    const englishCitation = `${renderOwnName(localize(paper.authors, 'en'))} (${escapeHtml(localize(paper.citationStatus || paper.status, 'en'))}). ${escapeHtml(localize(paper.title, 'en'))}. <em class="paper-venue">${escapeHtml(localize(paper.venue, 'en'))}</em>.`;
+    const chineseCitation = `${renderOwnName(localize(paper.authors, 'zh'))} (${escapeHtml(localize(paper.citationStatus || paper.status, 'zh'))}). ${escapeHtml(localize(paper.title, 'zh'))}. <em class="paper-venue">${escapeHtml(localize(paper.venue, 'zh'))}</em>.`;
+    const authorNote = language === 'zh'
+      ? '(# 共同第一作者; * 通讯作者)'
+      : '(# co-first authors; * corresponding authors)';
+    return `
+      <article class="paper-entry paper-entry--bilingual">
+        <p class="apa-citation">${englishCitation} [${chineseCitation}] <span class="paper-author-note">${escapeHtml(authorNote)}</span></p>
+      </article>
+    `;
+  }
   const citationStatus = localize(paper.citationStatus || paper.status, language);
-  const venue = paper.venue ? ` <em class="paper-venue">${escapeHtml(paper.venue)}</em>.` : '';
+  const venue = paper.venue ? ` <em class="paper-venue">${escapeHtml(localize(paper.venue, language))}</em>.` : '';
   const metrics = paper.metrics ? ` <span class="paper-metrics">[${escapeHtml(paper.metrics)}]</span>` : '';
   return `
     <article class="paper-entry">
-      <p class="apa-citation">${renderOwnName(paper.authors)} (${escapeHtml(citationStatus)}). ${escapeHtml(paper.title)}.${venue}${metrics}</p>
+      <p class="apa-citation">${renderOwnName(localize(paper.authors, language))} (${escapeHtml(citationStatus)}). ${escapeHtml(localize(paper.title, language))}.${venue}${metrics}</p>
     </article>
   `;
 }
@@ -173,7 +189,7 @@ function renderEducation(content, language) {
 function renderExperience(content, language) {
   return `
     <div class="background-block experience-block">
-      <h2>${language === 'zh' ? '工作经历' : 'Work experience'}</h2>
+      <h2>${language === 'zh' ? '其他工作经历' : 'Other work experience'}</h2>
       <div class="experience-list">
         ${content.background.experience.map((item) => `
           <article>
@@ -194,7 +210,7 @@ function renderExperience(content, language) {
 function renderAcademicService(content, language) {
   return `
     <div class="background-block academic-service-block">
-      <h2>${language === 'zh' ? '学术服务' : 'Academic Service'}</h2>
+      <h2>${language === 'zh' ? '学术服务与科学传播' : 'Academic Service & Science Communication'}</h2>
       <div class="experience-list">
         ${content.background.academicService.map((item) => `
           <article>
@@ -202,7 +218,9 @@ function renderAcademicService(content, language) {
               <p><strong>${item.url
                 ? `<a class="academic-service-link" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(localize(item.organization, language))}</a>`
                 : escapeHtml(localize(item.organization, language))}</strong><span>${escapeHtml(localize(item.role, language))}</span></p>
-              <time class="experience-period">${escapeHtml(localize(item.period, language))}</time>
+              ${localize(item.period, language)
+                ? `<time class="experience-period">${escapeHtml(localize(item.period, language))}</time>`
+                : ''}
             </header>
             <ul class="experience-highlights">
               ${item.highlights.map((highlight) => `<li>${escapeHtml(localize(highlight, language))}</li>`).join('')}
@@ -216,13 +234,15 @@ function renderAcademicService(content, language) {
 
 function renderProfessionalBackground(content, language) {
   return `
+    <section id="service" class="academic-section academic-service-section" data-observed-section>
+      ${renderAcademicService(content, language)}
+    </section>
     <section id="experience" class="academic-section" data-observed-section>
       ${renderExperience(content, language)}
-      ${renderAcademicService(content, language)}
       <div class="background-block honors-block">
         <h2>${language === 'zh' ? '奖励与荣誉' : 'Honors and Awards'}</h2>
         <ul>
-          ${content.background.honors.map((item) => `<li>${escapeHtml(localize(item, language))}</li>`).join('')}
+          ${content.background.honors.map((item) => `<li><strong class="honor-year">${escapeHtml(localize(item.period, language))}</strong>${language === 'zh' ? '，' : ', '}${escapeHtml(localize(item.award, language))}</li>`).join('')}
         </ul>
       </div>
     </section>

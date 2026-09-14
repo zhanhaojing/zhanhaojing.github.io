@@ -127,14 +127,36 @@ test('work experience uses a single vertical column', () => {
   assert.match(css, /\.experience-highlights li \+ li\s*{[^}]*margin-top:\s*0\.45rem/s);
 });
 
-test('academic service is presented conservatively between work experience and honors', () => {
-  assert.equal(content.background.academicService.length, 1);
+test('academic service precedes other work experience', () => {
+  assert.equal(content.background.academicService.length, 3);
   assert.equal(content.background.academicService[0].role.en, 'Project Contributor');
-  assert.match(content.background.academicService[0].highlights[0].en, /Recently joined/);
-  assert.match(singlePage, /'学术服务' : 'Academic Service'/);
-  assert.match(singlePage, /renderExperience\(content, language\)[\s\S]*renderAcademicService\(content, language\)[\s\S]*honors-block/);
+  assert.equal(content.background.academicService[0].organization.zh, '中文版开放学术术语数据集');
+  assert.equal(content.background.academicService[0].organization.en, 'Chinese-Language Open Scholarship Glossary Dataset');
+  assert.equal(content.background.academicService[0].url, '');
+  assert.match(content.background.academicService[0].highlights[0].en, /drafting the data paper/);
+  assert.equal(content.background.academicService[1].role.en, 'Science Writer');
+  assert.equal(content.background.academicService[1].url, '');
+  assert.deepEqual(content.background.academicService[1].period, {
+    zh: '2024 年 4 月-2026 年 8 月',
+    en: 'Apr 2024-Aug 2026',
+  });
+  assert.match(content.background.academicService[1].highlights[0].en, /more than 40 articles/);
+  assert.equal(content.background.academicService[2].organization.en, 'NeuroReality');
+  assert.deepEqual(content.background.academicService[2].period, {
+    zh: '2022 年 7 月-2024 年 3 月',
+    en: 'Jul 2022-Mar 2024',
+  });
+  assert.match(content.background.academicService[2].highlights[0].en, /more than nine published pieces/);
+  assert.match(content.background.academicService[2].highlights[1].en, /four original short articles/);
+  assert.match(singlePage, /'学术服务与科学传播' : 'Academic Service & Science Communication'/);
+  assert.match(singlePage, /renderAcademicService\(content, language\)[\s\S]*id="experience"[\s\S]*renderExperience\(content, language\)[\s\S]*honors-block/);
   assert.match(singlePage, /class="academic-service-link"/);
   assert.match(css, /\.academic-service-link\s*{[^}]*color:\s*var\(--color-text\)[^}]*text-decoration:\s*none/s);
+});
+
+test('English research disciplines render as two intentional lines', () => {
+  assert.match(singlePage, /localizedRole\.split\(' & '\)/);
+  assert.match(css, /\.profile-role span\s*{[^}]*display:\s*block/s);
 });
 
 test('profile photo preserves the original composition', () => {
@@ -212,6 +234,7 @@ test('collaborative research uses the same project-title hierarchy', () => {
 test('experience and honors use the same heading level as research', () => {
   assert.match(css, /\.background-block > h2\s*{[^}]*margin-bottom:/s);
   assert.doesNotMatch(css, /\.background-block > h2\s*{[^}]*font-size:/s);
+  assert.match(css, /\.honor-year\s*{[^}]*font-weight:\s*var\(--weight-semibold\)[^}]*font-variant-numeric:\s*tabular-nums/s);
 });
 
 test('major section headings have clear prominence', () => {

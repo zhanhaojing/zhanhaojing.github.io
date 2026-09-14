@@ -11,7 +11,7 @@ const content = JSON.parse(readFileSync(join(root, 'site/content/siteContent.jso
 
 test('single-page renderer includes every anchor section', () => {
   const html = renderSinglePage(content, 'en');
-  for (const id of ['about', 'education', 'research', 'papers', 'experience']) {
+  for (const id of ['about', 'education', 'research', 'papers', 'service', 'experience']) {
     assert.match(html, new RegExp(`id="${id}"`));
   }
   assert.match(html, /class="profile-panel"/);
@@ -31,13 +31,20 @@ test('layout uses anchor navigation instead of route pages', () => {
   assert.match(html, /href="#research"/);
   assert.match(html, /href="#papers"/);
   assert.match(html, /data-nav-target="education"/);
+  assert.match(html, /data-nav-target="service"[^>]*>Academic Service &amp; Science Communication<\/a>/);
   assert.match(html, /data-nav-target="experience"/);
   assert.doesNotMatch(html, /aria-current="page"/);
 });
 
+test('English research disciplines render on two separate lines', () => {
+  const html = renderSinglePage(content, 'en');
+  assert.match(html, /<p class="profile-role"><span>Social Psychology<\/span><span>Evolutionary Psychology<\/span><\/p>/);
+  assert.doesNotMatch(html, /Social Psychology &amp; Evolutionary Psychology/);
+});
+
 test('paper renderer bolds the profile owner and includes revision metadata', () => {
   const html = renderSinglePage(content, 'en');
-  assert.match(html, /Jiang, W\., <strong>Zhan, H\.<\/strong>, Shi, Z\.#, &amp; Zhang, X\.#/);
+  assert.match(html, /Jiang, W\., <strong>Zhan, H\.<\/strong>, Shi, Z\.\*, &amp; Zhang, X\.\*/);
   assert.match(html, /\(under revision\)\./);
   assert.match(html, /<em class="paper-venue">Psychiatry Research<\/em>\./);
   assert.match(html, /\[JIF = 3\.9, JCR Q1\]/);
@@ -45,21 +52,65 @@ test('paper renderer bolds the profile owner and includes revision metadata', ()
   assert.match(html, /class="apa-citation"/);
 });
 
+test('glossary data paper renders one bilingual citation in both language versions', () => {
+  const en = renderSinglePage(content, 'en');
+  const zh = renderSinglePage(content, 'zh');
+  for (const html of [en, zh]) {
+    assert.match(html, /<strong>Zhan, H\.<\/strong>#, Liu, R\.#/);
+    assert.match(html, /A Chinese-Language Glossary of Open Scholarship Terms/);
+    assert.match(html, /<em class="paper-venue">China Scientific Data<\/em>/);
+    assert.match(html, /\[<strong>詹皓晶<\/strong>#, 刘若婷#/);
+    assert.match(html, /中文版开放学术术语数据集/);
+    assert.match(html, /\(数据论文准备中\)\. 中文版开放学术术语数据集\. <em class="paper-venue">中国科学数据<\/em>\.\]/);
+  }
+  assert.match(en, /# co-first authors; \* corresponding authors/);
+  assert.match(zh, /# 共同第一作者; \* 通讯作者/);
+});
+
 test('working papers precede research in the single-page flow', () => {
   const html = renderSinglePage(content, 'en');
   assert.ok(html.indexOf('id="education"') < html.indexOf('id="papers"'));
   assert.ok(html.indexOf('id="papers"') < html.indexOf('id="research"'));
-  assert.ok(html.indexOf('id="research"') < html.indexOf('id="experience"'));
-  assert.match(html, /<h2>Work experience<\/h2>/);
+  assert.ok(html.indexOf('id="research"') < html.indexOf('<h2>Academic Service & Science Communication<\/h2>'));
+  assert.ok(html.indexOf('<h2>Academic Service & Science Communication<\/h2>') < html.indexOf('id="experience"'));
+  assert.match(html, /<h2>Other work experience<\/h2>/);
   assert.doesNotMatch(html, /Applied research experience|Professional background/);
   assert.match(html, /<h2>Honors and Awards<\/h2>/);
   assert.doesNotMatch(html, /Selected honors/);
 });
 
-test('collaborative OCS work states the author role without a redundant subsection label', () => {
+test('science communication entries render verified periods and outputs', () => {
+  const en = renderSinglePage(content, 'en');
+  const zh = renderSinglePage(content, 'zh');
+  assert.match(en, /nextquestion, Tianqiao and Chrissy Chen Institute/);
+  assert.match(en, /Science Writer/);
+  assert.match(en, /Apr 2024-Aug 2026/);
+  assert.match(en, /more than 40 articles/);
+  assert.match(zh, /追问 nextquestion（天桥脑科学研究院旗下科学媒体）/);
+  assert.match(zh, />科普作者</);
+  assert.match(zh, /2024 年 4 月-2026 年 8 月/);
+  assert.match(zh, /累计发布 40 余篇科普文章/);
+  assert.match(en, /NeuroReality/);
+  assert.match(en, /Science Writer, Translator, and Reviewer/);
+  assert.match(en, /Jul 2022-Mar 2024/);
+  assert.match(en, /more than nine published pieces/);
+  assert.match(en, /four original short articles/);
+  assert.match(zh, /神经现实/);
+  assert.match(zh, /科普作者、编译与审校/);
+  assert.match(zh, /2022 年 7 月-2024 年 3 月/);
+  assert.match(zh, /累计推出 9 篇以上编译科普文章/);
+  assert.match(zh, /累计推出 4 篇原创科普短文/);
+  assert.doesNotMatch(en, /<a[^>]*>Chinese-Language Open Scholarship Glossary Dataset<\/a>/);
+  assert.doesNotMatch(en, /<a[^>]*>nextquestion, Tianqiao and Chrissy Chen Institute<\/a>/);
+  assert.doesNotMatch(zh, /<a[^>]*>中文版开放学术术语数据集<\/a>/);
+  assert.doesNotMatch(zh, /<a[^>]*>追问 nextquestion（天桥脑科学研究院旗下科学媒体）<\/a>/);
+});
+
+test('collaborative OCS work states the full co-author contribution without a redundant subsection label', () => {
   const html = renderSinglePage(content, 'en');
   assert.match(html, /Longitudinal Network Study of Obsessive-Compulsive Symptoms/);
-  assert.match(html, /manuscript development and editing/);
+  assert.match(html, /Co-author; contributed to manuscript revision and responses to reviewer comments/);
+  assert.match(html, /strengthening the Introduction and Discussion/);
   assert.doesNotMatch(html, /Collaborative research/);
   assert.ok(html.indexOf('AI Threat and National Identification') < html.indexOf('Longitudinal Network Study'));
   assert.ok(html.indexOf('Longitudinal Network Study') < html.indexOf('Selected previous research'));
@@ -94,8 +145,9 @@ test('work experience renders evidence-based bullet points', () => {
 test('honors use the revised Applied Psychology cohort ranking', () => {
   const en = renderSinglePage(content, 'en');
   const zh = renderSinglePage(content, 'zh');
-  assert.match(zh, /华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格/);
-  assert.match(en, /Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University/);
+  assert.match(zh, /<strong class="honor-year">2020<\/strong>，华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格/);
+  assert.match(en, /<strong class="honor-year">2020<\/strong>, Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University/);
+  assert.match(zh, /<strong class="honor-year">2021-2022、2022-2023<\/strong>，中国科学院大学二等奖学金/);
 });
 
 test('research status is rendered inside the project heading', () => {

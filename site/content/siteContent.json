@@ -25,8 +25,8 @@
       }
     },
     "role": {
-      "zh": "社会心理学研究者",
-      "en": "Social Psychology Researcher"
+      "zh": "社会心理学、进化心理学",
+      "en": "Social Psychology & Evolutionary Psychology"
     },
     "headline": {
       "zh": "我关注个体在面对与自身生存和安全相关的威胁时，如何理解并调整自己与国家、政府及其他群体之间的关系。",
@@ -34,8 +34,8 @@
     },
     "bio": [
       {
-        "zh": "我的研究以现实威胁为起点，考察群体认同、制度信任与群体边界在威胁应对中的作用。我尤其关注，人们何时会将群体视为安全与支持的来源，以及这种联结何时促进合作，何时又会转向防御与排斥。",
-        "en": "My research begins with realistic threats and examines the roles of group identification, institutional trust, and group boundaries in people's responses to threat. I am particularly interested in when people turn to groups for security and support, when these connections encourage cooperation, and when they become defensive or exclusionary."
+        "zh": "我的研究基于进化心理学视角，考察群体认同、制度信任与群体边界在威胁应对中的作用。",
+        "en": "My research draws on evolutionary psychology to examine the roles of group identification, institutional trust, and group boundaries in responses to threat."
       },
       {
         "zh": "目前，我主要研究 AI 及其他现实威胁如何影响国家认同，以及政府信任在其中发挥的作用。在此基础上，我也希望将这条研究线拓展到社会文化变迁中的规范压力，进一步理解这类压力如何影响身份适应、社会联结和掌控感。",
@@ -107,10 +107,17 @@
       }
     },
     {
+      "id": "service",
+      "label": {
+        "zh": "学术服务与科学传播",
+        "en": "Academic Service & Science Communication"
+      }
+    },
+    {
       "id": "experience",
       "label": {
-        "zh": "工作经历",
-        "en": "Work Experience"
+        "zh": "其他工作经历",
+        "en": "Other Work Experience"
       }
     }
   ],
@@ -153,20 +160,20 @@
         "en": "Realistic Threat and National Identification: Psychological Mechanisms"
       },
       "question": {
-        "zh": "本研究构建现实威胁影响国家认同的综合解释框架，梳理不同威胁何时强化或削弱国家联结，以及这些差异源自哪些适应性机制。",
-        "en": "This review develops an integrative framework for when realistic threats strengthen or weaken national attachment and which adaptive mechanisms account for these divergent outcomes."
+        "zh": "本综述从进化心理学视角整合现实威胁与国家认同研究，区分国家依恋与国家群体界定，并探讨现实威胁如何改变不同认同形式在特定环境中的相对适应性价值，使国家认同的不同维度呈现不同变化。",
+        "en": "This review integrates research on realistic threats and national identification through an evolutionary psychological lens. It distinguishes national attachment from national group definition and examines how threats may alter the relative adaptive value of different forms of national identification across environmental conditions, leading these dimensions to change in different ways."
       },
       "designData": {
-        "zh": "从进化心理学视角整合自然灾害、战争与恐怖袭击、传染病、经济衰退及移民威胁等研究。",
-        "en": "An integrative review drawing on evolutionary psychology and research on natural disasters, war and terrorism, infectious disease, economic downturn, and immigration threat."
+        "zh": "整合自然灾害、战争与恐怖袭击、传染病、经济衰退及移民威胁等研究证据。",
+        "en": "An integrative review of evidence on natural disasters, war and terrorism, infectious disease, economic downturn, and immigration threat."
       },
       "methods": {
-        "zh": "辨析现实威胁与国家认同的核心概念，并综合安全寻求、保护性群体依赖、控制感修复、国家群体功能性价值评估与群际边界强化等潜在机制。",
-        "en": "The framework clarifies core concepts and integrates potential mechanisms including security seeking, protective group reliance, restoration of control, evaluation of the national group's functional value, and stronger intergroup boundaries."
+        "zh": "围绕安全寻求、保护性群体依赖、控制感修复、国家群体功能性价值评估与群际边界强化等机制构建综合解释框架。",
+        "en": "The framework synthesizes mechanisms including security seeking, protective group reliance, restoration of control, evaluation of the national group's functional value, and stronger intergroup boundaries."
       },
       "role": {
-        "zh": "负责核心概念辨析与理论框架建构，主导综述主体写作与多轮修订。",
-        "en": "Responsible for conceptual clarification and theoretical framework development, and led the main review writing and successive revisions."
+        "zh": "负责核心概念辨析与理论框架建构，主导综述主体写作与多轮修改，并重点推进进化解释与适应性价值逻辑的完善。",
+        "en": "Responsible for conceptual clarification and theoretical framework development; led the main review writing and successive revisions, with particular focus on refining the evolutionary account and adaptive-value logic."
       },
       "status": {
         "zh": "综述稿准备中",
@@ -194,8 +201,8 @@
         "en": "The interpretation distinguishes temporal associations from causal mechanisms and considers psychological vulnerability, developmental transitions, clinical implications, limitations, and future directions."
       },
       "role": {
-        "zh": "合作作者，参与论文修改并协助回应审稿意见，重点完善 Introduction 与 Discussion，优化理论逻辑、文献整合及纵向网络结果的解释。",
-        "en": "Co-author; contributed to manuscript development and editing and helped address reviewer comments, focusing on the Introduction and Discussion, theoretical logic, literature integration, and interpretation of the longitudinal network findings."
+        "zh": "合作作者，参与论文修改与审稿意见回复，重点完善 Introduction 与 Discussion，优化理论逻辑、文献整合及纵向网络结果的解释。",
+        "en": "Co-author; contributed to manuscript revision and responses to reviewer comments, with particular focus on strengthening the Introduction and Discussion, theoretical logic, literature integration, and interpretation of the longitudinal network results."
       },
       "status": {
         "zh": "论文修改中",
@@ -249,7 +256,7 @@
     {
       "id": "jiang-zhan-oc-metacognition",
       "title": "Unravelling the associations between obsessive-compulsive symptoms and metacognitive beliefs in Chinese college freshmen: A cross-lagged panel network analysis",
-      "authors": "Jiang, W., Zhan, H., Shi, Z.#, & Zhang, X.#",
+      "authors": "Jiang, W., Zhan, H., Shi, Z.*, & Zhang, X.*",
       "status": {
         "zh": "Psychiatry Research 返修中",
         "en": "Under revision at Psychiatry Research"
@@ -268,7 +275,7 @@
     {
       "id": "ai-threat-working-paper",
       "title": "When AI threatens the nation: Government trust and national attachment",
-      "authors": "Zhan, H., & Li, Y.#",
+      "authors": "Zhan, H., & Li, Y.*",
       "status": {
         "zh": "稿件准备中",
         "en": "Manuscript in preparation"
@@ -285,7 +292,7 @@
     {
       "id": "realistic-threat-review",
       "title": "The effect of realistic threats on national identification and its psychological mechanism",
-      "authors": "Zhan, H., Ding, J., & Li, Y.#",
+      "authors": "Zhan, H., Ding, J., & Li, Y.*",
       "status": {
         "zh": "综述稿准备中",
         "en": "Review manuscript in preparation"
@@ -297,6 +304,34 @@
       "summary": {
         "zh": "梳理现实威胁影响国家认同及其心理机制的综述稿件。",
         "en": "A review manuscript synthesizing how realistic threats affect national identification and related psychological mechanisms."
+      }
+    },
+    {
+      "id": "open-scholarship-glossary-data-paper",
+      "bilingualCitation": true,
+      "title": {
+        "zh": "中文版开放学术术语数据集",
+        "en": "A Chinese-Language Glossary of Open Scholarship Terms"
+      },
+      "authors": {
+        "zh": "詹皓晶#, 刘若婷#, 陈梁杰, 温秀娟, 郝朋风, 敬俊林, 方凯乐, 纪学君, 王欣雨, 王梓西, 徐煜, 胡传鹏, 杨金骉*, 金淑娴*",
+        "en": "Zhan, H.#, Liu, R.#, Chen, L., Wen, X., Hao, P., Jing, J., Fang, K., Ji, X., Wang, X., Wang, Z., Xu, Y., Hu, C., Yang, J.*, & Jin, S.*"
+      },
+      "status": {
+        "zh": "数据论文准备中",
+        "en": "Data paper in preparation"
+      },
+      "citationStatus": {
+        "zh": "数据论文准备中",
+        "en": "data paper in preparation"
+      },
+      "venue": {
+        "zh": "中国科学数据",
+        "en": "China Scientific Data"
+      },
+      "summary": {
+        "zh": "介绍中文版开放学术术语数据集的建设、组织与使用。",
+        "en": "A data paper presenting the development, organization, and use of a Chinese-language glossary of open scholarship terms."
       }
     }
   ],
@@ -412,8 +447,8 @@
     "academicService": [
       {
         "organization": {
-          "zh": "FORRT 开放学术术语表中文版",
-          "en": "FORRT Open Scholarship Glossary, Chinese Edition"
+          "zh": "中文版开放学术术语数据集",
+          "en": "Chinese-Language Open Scholarship Glossary Dataset"
         },
         "role": {
           "zh": "项目贡献者",
@@ -423,27 +458,85 @@
           "zh": "2026 年 8 月至今",
           "en": "Aug 2026-Present"
         },
-        "url": "https://forrt.org/glossary/chinese/",
+        "url": "",
         "highlights": [
           {
-            "zh": "近期加入中文版术语表项目，后续将参与开放学术术语定义、中文表达与参考来源的审校和修订，为面向中文研究者的开放科学基础资源建设提供支持。",
-            "en": "Recently joined the Chinese glossary project and will contribute to reviewing and revising open-scholarship definitions, Chinese-language phrasing, and source references, supporting an accessible open-science resource for Chinese-speaking researchers."
+            "zh": "参与中文版开放学术术语数据集项目。负责数据论文撰写，参与术语数据的整理。",
+            "en": "Contributing to the Chinese-language Open Scholarship Glossary dataset project; responsible for drafting the data paper and contributing to terminology-data organization."
+          }
+        ]
+      },
+      {
+        "organization": {
+          "zh": "追问 nextquestion（天桥脑科学研究院旗下科学媒体）",
+          "en": "nextquestion, Tianqiao and Chrissy Chen Institute"
+        },
+        "role": {
+          "zh": "科普作者",
+          "en": "Science Writer"
+        },
+        "period": {
+          "zh": "2024 年 4 月-2026 年 8 月",
+          "en": "Apr 2024-Aug 2026"
+        },
+        "url": "",
+        "highlights": [
+          {
+            "zh": "跟进人工智能、心理学、认知科学等领域的研究进展，进行资料整理、科普内容编译与撰写，累计发布 40 余篇科普文章。",
+            "en": "Tracked research developments in artificial intelligence, psychology, and cognitive science; conducted background research and translated, adapted, and wrote popular science content, publishing more than 40 articles."
+          }
+        ]
+      },
+      {
+        "organization": {
+          "zh": "神经现实",
+          "en": "NeuroReality"
+        },
+        "role": {
+          "zh": "科普作者、编译与审校",
+          "en": "Science Writer, Translator, and Reviewer"
+        },
+        "period": {
+          "zh": "2022 年 7 月-2024 年 3 月",
+          "en": "Jul 2022-Mar 2024"
+        },
+        "url": "https://neu-reality.com/",
+        "highlights": [
+          {
+            "zh": "参与认知神经科学、心理学等领域期刊及杂志科普文章的编译与审校，累计推出 9 篇以上编译科普文章。",
+            "en": "Translated, adapted, and reviewed popular science articles from journals and magazines in cognitive neuroscience, psychology, and related fields, contributing to more than nine published pieces."
+          },
+          {
+            "zh": "参与神经现实官方微信公众号“神经周周发”栏目内容生产，累计推出 4 篇原创科普短文，从专业视角解读社会热点，为入门读者普及相关学科知识。",
+            "en": "Contributed to NeuroReality's WeChat column Neuroscience Weekly and published four original short articles that used disciplinary perspectives to explain current social issues to introductory audiences."
           }
         ]
       }
     ],
     "honors": [
       {
-        "zh": "中国科学院大学三好学生，2021-2022",
-        "en": "Merit Student, University of Chinese Academy of Sciences, 2021-2022"
+        "period": "2021-2022",
+        "award": {
+          "zh": "中国科学院大学三好学生",
+          "en": "Merit Student, University of Chinese Academy of Sciences"
+        }
       },
       {
-        "zh": "中国科学院大学二等奖学金，2021-2022、2022-2023",
-        "en": "Second-Class Scholarship, University of Chinese Academy of Sciences, 2021-2022 and 2022-2023"
+        "period": {
+          "zh": "2021-2022、2022-2023",
+          "en": "2021-2022 and 2022-2023"
+        },
+        "award": {
+          "zh": "中国科学院大学二等奖学金",
+          "en": "Second-Class Scholarship, University of Chinese Academy of Sciences"
+        }
       },
       {
-        "zh": "华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格",
-        "en": "Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University"
+        "period": "2020",
+        "award": {
+          "zh": "华南师范大学应用心理学专业年级综合评分第一，获保送研究生资格",
+          "en": "Ranked first in comprehensive evaluation in the Applied Psychology cohort and qualified for recommended admission to postgraduate study, South China Normal University"
+        }
       }
     ]
   }

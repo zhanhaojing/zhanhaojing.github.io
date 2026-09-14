@@ -8,12 +8,13 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const source = readFileSync(join(root, 'site/content/siteContent.json'), 'utf8');
 const content = JSON.parse(source);
 
-test('navigation defines five non-redundant single-page anchors', () => {
+test('navigation defines six non-redundant single-page anchors', () => {
   assert.deepEqual(content.navigation.map((item) => item.id), [
     'about',
     'education',
     'papers',
     'research',
+    'service',
     'experience'
   ]);
   assert.equal('contact' in content, false);
@@ -32,10 +33,10 @@ test('public profile settings expose only approved information', () => {
 });
 
 test('working papers include the Psychiatry Research revision', () => {
-  assert.equal(content.papers.length, 3);
+  assert.equal(content.papers.length, 4);
   const paper = content.papers.find((item) => item.id === 'jiang-zhan-oc-metacognition');
   assert.ok(paper);
-  assert.match(paper.authors, /Jiang, W\., Zhan, H\., Shi, Z\.#, & Zhang, X\.#/);
+  assert.match(paper.authors, /Jiang, W\., Zhan, H\., Shi, Z\.\*, & Zhang, X\.\*/);
   assert.equal(paper.status.en, 'Under revision at Psychiatry Research');
   assert.equal(paper.citationStatus.en, 'under revision');
   assert.equal(paper.venue, 'Psychiatry Research');
@@ -44,9 +45,23 @@ test('working papers include the Psychiatry Research revision', () => {
 });
 
 test('working papers mark Li, Y. as corresponding author', () => {
-  const papersWithLi = content.papers.filter((paper) => paper.authors.includes('Li, Y.'));
+  const englishAuthors = (paper) => typeof paper.authors === 'string' ? paper.authors : paper.authors.en;
+  const papersWithLi = content.papers.filter((paper) => englishAuthors(paper).includes('Li, Y.'));
   assert.equal(papersWithLi.length, 2);
-  assert.equal(papersWithLi.every((paper) => paper.authors.includes('Li, Y.#')), true);
+  assert.equal(papersWithLi.every((paper) => englishAuthors(paper).includes('Li, Y.*')), true);
+});
+
+test('working papers include the bilingual open scholarship glossary data paper', () => {
+  const paper = content.papers.find((item) => item.id === 'open-scholarship-glossary-data-paper');
+  assert.ok(paper);
+  assert.equal(paper.title.zh, '中文版开放学术术语数据集');
+  assert.equal(paper.title.en, 'A Chinese-Language Glossary of Open Scholarship Terms');
+  assert.equal(content.papers.at(-1).id, 'open-scholarship-glossary-data-paper');
+  assert.match(paper.authors.zh, /^詹皓晶#, 刘若婷#/);
+  assert.match(paper.authors.en, /^Zhan, H\.#, Liu, R\.#/);
+  assert.match(paper.authors.zh, /杨金骉\*, 金淑娴\*$/);
+  assert.match(paper.authors.en, /Yang, J\.\*, & Jin, S\.\*$/);
+  assert.deepEqual(paper.venue, { zh: '中国科学数据', en: 'China Scientific Data' });
 });
 
 test('research topics are bilingual and concise', () => {
@@ -83,14 +98,16 @@ test('research descriptions reflect the approved project evidence', () => {
   assert.match(ai.designData.en, /N = 541/);
   assert.match(ai.designData.en, /N = 600/);
   assert.match(ai.methods.en, /HLM and mediation-path analyses/);
-  assert.match(realistic.designData.en, /evolutionary psychology/);
+  assert.match(realistic.question.en, /evolutionary psychological lens/);
+  assert.match(realistic.question.en, /relative adaptive value/);
   assert.match(realistic.methods.en, /security seeking/);
   assert.match(disease.methods.en, /N = 300 and N = 101/);
   assert.equal(ocs.group, 'collaborative');
   assert.match(ocs.designData.en, /cross-lagged panel network/);
-  assert.match(ocs.role.zh, /参与论文修改并协助回应审稿意见/);
+  assert.equal(ocs.role.zh, '合作作者，参与论文修改与审稿意见回复，重点完善 Introduction 与 Discussion，优化理论逻辑、文献整合及纵向网络结果的解释。');
   assert.doesNotMatch(ocs.role.zh, /参与论文返修/);
-  assert.match(ocs.role.en, /manuscript development and editing/);
+  assert.match(ocs.role.en, /Co-author; contributed to manuscript revision and responses to reviewer comments/);
+  assert.match(ocs.role.en, /Introduction and Discussion/);
 });
 
 test('public profile includes the approved ORCID identity link', () => {

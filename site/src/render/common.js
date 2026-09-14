@@ -1,4 +1,4 @@
-import { localize, visibleProfile } from '../contentAccess.js?v=20260809-single-page-30';
+import { localize, visibleProfile } from '../contentAccess.js?v=20260914-site-1';
 
 export function escapeHtml(value) {
   return String(value ?? '')
@@ -10,7 +10,10 @@ export function escapeHtml(value) {
 }
 
 export function renderOwnName(authors) {
-  return escapeHtml(authors).replaceAll('Zhan, H.', '<strong>Zhan, H.</strong>');
+  return escapeHtml(authors)
+    .replaceAll('Zhan, H.', '<strong>Zhan, H.</strong>')
+    .replaceAll('ZHAN Haojing', '<strong>ZHAN Haojing</strong>')
+    .replaceAll('詹皓晶', '<strong>詹皓晶</strong>');
 }
 
 export function renderNavigation(content, language) {
