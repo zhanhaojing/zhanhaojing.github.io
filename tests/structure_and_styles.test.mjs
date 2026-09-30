@@ -92,6 +92,12 @@ test('paper citations share the desktop justified alignment', () => {
   assert.match(css, /@media\s*\(min-width:\s*48\.0625rem\)\s*{[\s\S]*?\.prose p,\s*\.apa-citation,[\s\S]*?text-align:\s*justify;[\s\S]*?text-align-last:\s*left;/s);
 });
 
+test('paper-wide author note aligns with the full paper list', () => {
+  const rule = css.match(/\.paper-list-note\s*\{([^}]*)\}/)?.[1] || '';
+  assert.doesNotMatch(rule, /padding-left/);
+  assert.doesNotMatch(rule, /margin-left/);
+});
+
 test('styles use one restrained accent and avoid decorative effects', () => {
   assert.match(css, /--color-accent:\s*#315f78/);
   assert.doesNotMatch(css, /linear-gradient|radial-gradient/i);
