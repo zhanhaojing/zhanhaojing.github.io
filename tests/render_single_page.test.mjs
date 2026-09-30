@@ -57,14 +57,17 @@ test('glossary data paper renders one bilingual citation in both language versio
   const zh = renderSinglePage(content, 'zh');
   for (const html of [en, zh]) {
     assert.match(html, /<strong>Zhan, H\.<\/strong>#, Liu, R\.#/);
+    assert.match(html, /\(under review\)\. A Chinese-Language Glossary of Open Scholarship Terms/);
     assert.match(html, /A Chinese-Language Glossary of Open Scholarship Terms/);
     assert.match(html, /<em class="paper-venue">China Scientific Data<\/em>/);
     assert.match(html, /\[<strong>詹皓晶<\/strong>#, 刘若婷#/);
     assert.match(html, /中文版开放学术术语数据集/);
-    assert.match(html, /\(数据论文准备中\)\. 中文版开放学术术语数据集\. <em class="paper-venue">中国科学数据<\/em>\.\]/);
+    assert.match(html, /\(评审中\)\. 中文版开放学术术语数据集\. <em class="paper-venue">中国科学数据<\/em>\.\]/);
   }
-  assert.match(en, /# co-first authors; \* corresponding authors/);
-  assert.match(zh, /# 共同第一作者; \* 通讯作者/);
+  assert.match(en, /<\/div>\s*<p class="paper-list-note">Note: # co-first authors; \* corresponding authors<\/p>\s*<\/section>/);
+  assert.match(zh, /<\/div>\s*<p class="paper-list-note">注：# 共同第一作者；\* 通讯作者<\/p>\s*<\/section>/);
+  assert.doesNotMatch(en, /paper-author-note/);
+  assert.doesNotMatch(zh, /paper-author-note/);
 });
 
 test('working papers precede research in the single-page flow', () => {

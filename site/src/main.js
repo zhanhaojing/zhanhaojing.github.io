@@ -1,6 +1,6 @@
-import { normalizeLanguage } from './contentAccess.js?v=20260914-site-1';
-import { renderLayout } from './render/common.js?v=20260914-site-1';
-import { renderSinglePage } from './render/singlePage.js?v=20260914-site-1';
+import { normalizeLanguage } from './contentAccess.js?v=20260930-site-1';
+import { renderLayout } from './render/common.js?v=20260930-site-1';
+import { renderSinglePage } from './render/singlePage.js?v=20260930-site-1';
 
 const app = document.querySelector('#app');
 let content = null;

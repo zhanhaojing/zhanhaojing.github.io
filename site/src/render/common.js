@@ -1,4 +1,4 @@
-import { localize, visibleProfile } from '../contentAccess.js?v=20260914-site-1';
+import { localize, visibleProfile } from '../contentAccess.js?v=20260930-site-1';
 
 export function escapeHtml(value) {
   return String(value ?? '')

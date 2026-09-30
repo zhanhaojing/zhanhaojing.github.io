@@ -61,6 +61,8 @@ test('working papers include the bilingual open scholarship glossary data paper'
   assert.match(paper.authors.en, /^Zhan, H\.#, Liu, R\.#/);
   assert.match(paper.authors.zh, /杨金骉\*, 金淑娴\*$/);
   assert.match(paper.authors.en, /Yang, J\.\*, & Jin, S\.\*$/);
+  assert.deepEqual(paper.status, { zh: '评审中', en: 'Under review' });
+  assert.deepEqual(paper.citationStatus, { zh: '评审中', en: 'under review' });
   assert.deepEqual(paper.venue, { zh: '中国科学数据', en: 'China Scientific Data' });
 });
 

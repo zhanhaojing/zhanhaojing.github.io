@@ -1,5 +1,5 @@
-import { groupedProjects, localize, visibleProfile } from '../contentAccess.js?v=20260914-site-1';
-import { escapeHtml, renderOwnName } from './common.js?v=20260914-site-1';
+import { groupedProjects, localize, visibleProfile } from '../contentAccess.js?v=20260930-site-1';
+import { escapeHtml, renderOwnName } from './common.js?v=20260930-site-1';
 
 function renderProfilePanel(content, language) {
   const profile = visibleProfile(content.profile);
@@ -128,12 +128,9 @@ function renderPaper(paper, language) {
   if (paper.bilingualCitation) {
     const englishCitation = `${renderOwnName(localize(paper.authors, 'en'))} (${escapeHtml(localize(paper.citationStatus || paper.status, 'en'))}). ${escapeHtml(localize(paper.title, 'en'))}. <em class="paper-venue">${escapeHtml(localize(paper.venue, 'en'))}</em>.`;
     const chineseCitation = `${renderOwnName(localize(paper.authors, 'zh'))} (${escapeHtml(localize(paper.citationStatus || paper.status, 'zh'))}). ${escapeHtml(localize(paper.title, 'zh'))}. <em class="paper-venue">${escapeHtml(localize(paper.venue, 'zh'))}</em>.`;
-    const authorNote = language === 'zh'
-      ? '(# 共同第一作者; * 通讯作者)'
-      : '(# co-first authors; * corresponding authors)';
     return `
       <article class="paper-entry paper-entry--bilingual">
-        <p class="apa-citation">${englishCitation} [${chineseCitation}] <span class="paper-author-note">${escapeHtml(authorNote)}</span></p>
+        <p class="apa-citation">${englishCitation} [${chineseCitation}]</p>
       </article>
     `;
   }
@@ -156,6 +153,9 @@ function renderPapers(content, language) {
       <div class="paper-list">
         ${content.papers.map((paper) => renderPaper(paper, language)).join('')}
       </div>
+      <p class="paper-list-note">${language === 'zh'
+        ? '注：# 共同第一作者；* 通讯作者'
+        : 'Note: # co-first authors; * corresponding authors'}</p>
     </section>
   `;
 }
